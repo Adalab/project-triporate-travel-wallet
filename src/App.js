@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      boardingList:[]
     };
     this.getInputFile= this.getInputFile.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -31,7 +31,7 @@ class App extends React.Component {
     .file(filename)
     .async('base64')
     .then(function success(content) {
-        
+
       }, function error(e) {
         console.log('error', e);
       }
@@ -42,9 +42,10 @@ class App extends React.Component {
     zip
     .file(filename)
     .async('string')
-    .then(function success(content) {
+    .then((content) => {
       const passData = JSON.parse(content);   
       if( passData.organizationName === "Iberia"){
+        
         const primColor = passData.backgroundColor;
         const origin = passData.boardingPass.primaryFields[0].value;
         const originName = passData.boardingPass.primaryFields[0].label;
@@ -74,7 +75,24 @@ class App extends React.Component {
         console.log(flyingClass);
         console.log(seat);
         console.log(passengerName);
-      } 
+        const  boardingCard = {
+          'primColor': primColor,
+          'origin': origin,
+          'originName': originName,
+          'destination': destination,
+          'destinationName': destinationName ,
+          'departureDate': departureDate,
+          'departureTime': departureTime,
+          'arrivalTime': arrivalTime,
+          'flight': flight,
+          'flyingClass': flyingClass,
+          'seat': seat,
+          'passengerName': passengerName
+        }
+        this.setState(prevState => ({
+          boardingList: [...prevState.boardingList, boardingCard]
+      }))
+         }
       else if(passData.organizationName === "Renfe"){
         const primColor = passData.labelColor;
         const originName = passData.boardingPass.primaryFields[0].label;
@@ -98,6 +116,21 @@ class App extends React.Component {
         console.log(trainClass);
         console.log(seat);
         console.log(car);
+        const  boardingCard = {
+          'primColor': primColor,
+          'originName': originName,
+          'destinationName': destinationName ,
+          'departureDate': departureDate,
+          'departureTime': departureTime,
+          'arrivalTime': arrivalTime,
+          'train': train,
+          'trainClass': trainClass,
+          'seat': seat,
+          'car': car
+        }
+        this.setState(prevState => ({
+          boardingList: [...prevState.boardingList, boardingCard]
+      }))
       }
       else{
 
