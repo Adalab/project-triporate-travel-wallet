@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Link, Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import List from './components/List';
 import Detail from './components/Detail';
 
