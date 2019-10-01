@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import List from './List';
 import './Detail.scss';
+import QRCode from 'qrcode.react';
 
 class Detail extends React.Component {
   constructor(props) {
@@ -35,7 +36,13 @@ class Detail extends React.Component {
             <div className="card__qr">
               <div className="boarding__info">boarding time</div>
               <div className="qr__small">
-                qr peque 
+                <QRCode value="755190101463160911600002706190518300510B115885YS3..CFTUB" 
+                  bgColor="#FF0080"
+                  fgColor="#FFFFFF"
+                  size="200"
+                  includeMargin="true"
+                  //{passData.barcode.message}
+                /> 
               </div>
             </div>
           </div>
