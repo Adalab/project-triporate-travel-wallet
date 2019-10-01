@@ -1,0 +1,189 @@
+{
+  "salaVip": false,
+  "fastTrack": false,
+  "upg": false,
+  "formatVersion": 1,
+  "passTypeIdentifier": "pass.com.iberia.MobileBoardingPassType",
+  "serialNumber": "34807394",
+  "teamIdentifier": "6GL25J95AB",
+  "organizationName": "Iberia",
+  "description": "SANTIAGO DE CHILE - MADRID",
+  "webServiceURL": "https://m.iberia.com:443/ibpass/passServices/",
+  "authenticationToken": "HD7NPW49PPPUQ3BF94R8",
+  "departureCode": "SCL",
+  "arrivalCode": "MAD",
+  "foregroundColor": "rgb(0, 0, 0)",
+  "backgroundColor": "rgb(243, 243, 243)",
+  "labelColor": "rgb(102,102,102)",
+  "relevantDate": "2019-02-04T00:25-03:00",
+  "expirationDate": "2019-02-07T00:55-03:00",
+  "listLabels": [
+    "departureDate_LOC",
+    "flightNumber_LOC",
+    "SANTIAGO DE CHILE",
+    "MADRID",
+    "gate_LOC",
+    "group_LOC",
+    "timeBoarding_LOC",
+    "IB19490655",
+    "seat_LOC",
+    "Nombre_completo_LOC",
+    "ff_LOC",
+    "numBillete_LOC",
+    "departure_terminal_LOC",
+    "horaSalida_LOC",
+    "arrival_LOC",
+    "horaLlegada_LOC",
+    "flightNumber_LOC",
+    "embarkment_date_LOC",
+    "ciaName_LOC",
+    "boardingNumber_LOC",
+    "bookingCode_LOC",
+    "class_LOC",
+    "luggage_LOC",
+    "remark_LOC"
+  ],
+  "associatedStoreIdentifiers": [
+    434825954
+  ],
+  "barcode": {
+    "format": "PKBarcodeFormatQR",
+    "altText": "IB6832,04FEB,52L",
+    "message": "M1SOSAGONZALEZ/CONSTANEJEEKZ  SCLMADIB 6832 035X052L1039 14B>518 WM9022BIB              2A0752379601836 2                              ",
+    "messageEncoding": "UTF8"
+  },
+  "boardingPass": {
+    "transitType": "PKTransitTypeAir",
+    "headerFields": [
+      {
+        "key": "departureDate",
+        "label": "departureDate_LOC",
+        "value": "04FEB"
+      },
+      {
+        "key": "flightNumber",
+        "label": "flightNumber_LOC",
+        "value": "IB6832"
+      }
+    ],
+    "primaryFields": [
+      {
+        "key": "depart",
+        "label": "SANTIAGO DE CHILE",
+        "value": "SCL"
+      },
+      {
+        "key": "destination",
+        "label": "MADRID",
+        "value": "MAD"
+      }
+    ],
+    "secondaryFields": [
+      {
+        "key": "passenger",
+        "label": "IB19490655",
+        "value": "SOSAGONZALEZ/CONSTANZA"
+      },
+      {
+        "key": "seat",
+        "label": "seat_LOC",
+        "value": "52L"
+      }
+    ],
+    "auxiliaryFields": [
+      {
+        "key": "gate",
+        "label": "gate_LOC",
+        "value": ""
+      },
+      {
+        "key": "group",
+        "label": "group_LOC",
+        "value": "GRUPO 1"
+      },
+      {
+        "key": "timeBoarding",
+        "label": "timeBoarding_LOC",
+        "value": "00:25"
+      }
+    ],
+    "backFields": [
+      {
+        "key": "nombreApe",
+        "label": "Nombre_completo_LOC",
+        "value": "SOSAGONZALEZ/CONSTANZA"
+      },
+      {
+        "key": "ff",
+        "label": "ff_LOC",
+        "value": "IB19490655"
+      },
+      {
+        "key": "numBillete",
+        "label": "numBillete_LOC",
+        "value": "0752379601836"
+      },
+      {
+        "key": "departure",
+        "label": "departure_terminal_LOC",
+        "value": "SANTIAGO DE CHILE - "
+      },
+      {
+        "key": "horaSalida",
+        "label": "horaSalida_LOC",
+        "value": "00:55"
+      },
+      {
+        "key": "arrival",
+        "label": "arrival_LOC",
+        "value": "MADRID"
+      },
+      {
+        "key": "horaLlegada",
+        "label": "horaLlegada_LOC",
+        "value": "17:45"
+      },
+      {
+        "key": "flight",
+        "label": "flightNumber_LOC",
+        "value": "IB6832"
+      },
+      {
+        "key": "embarkment_date",
+        "label": "embarkment_date_LOC",
+        "value": "00:40"
+      },
+      {
+        "key": "ciaName",
+        "label": "ciaName_LOC",
+        "value": "IBERIA LINEAS AEREAS"
+      },
+      {
+        "key": "boardingNumber",
+        "label": "boardingNumber_LOC",
+        "value": "1039"
+      },
+      {
+        "key": "bookingCode",
+        "label": "bookingCode_LOC",
+        "value": "PVNZRL"
+      },
+      {
+        "key": "class",
+        "label": "class_LOC",
+        "value": "X"
+      },
+      {
+        "key": "luggage",
+        "label": "luggage_LOC",
+        "value": "INFO_EQUIPAJE_MANO_PASS"
+      },
+      {
+        "key": "remark",
+        "label": "remark_LOC",
+        "value": ""
+      }
+    ]
+  },
+  "suppressStripShine": false
+}

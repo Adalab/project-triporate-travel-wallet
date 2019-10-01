@@ -179,12 +179,18 @@ class App extends React.Component {
         console.log(i);
     }
 }
-  
+
+handleFilePicker() {
+  this.myFileField.current.click();
+}
   render() {
     return (
       <div className="App">
         <Switch>
-          <Route exact path = "/" render = {routerProps => (<List getInputFile = {this.getInputFile}/>)}/>
+          <Route exact path = "/" render = {routerProps => (<List 
+          getInputFile = {this.getInputFile}
+          handleFilePicker = {this.handleFilePicker}
+          />)}/>
           <Route  path = "/detail" component = {Detail}></Route>
         </Switch>
       </div>
