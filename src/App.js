@@ -11,51 +11,54 @@ class App extends React.Component {
     this.state = {};
     this.getInputFile= this.getInputFile.bind(this);
     this.handleFile = this.handleFile.bind(this);
-    this.handleBackgroundImage = this.handleBackgroundImage.bind(this);
-    this.handleForegroundImage = this.handleForegroundImage.bind(this);
-    this.handleJsonData = this.handleJsonData.bind(this);
+    // this.handleBackgroundImage = this.handleBackgroundImage.bind(this);
+    // this.handleForegroundImage = this.handleForegroundImage.bind(this);
+    // this.handleJsonData = this.handleJsonData.bind(this);
   }
-  handleForegroundImage = function(zip, filename){
+  handleForegroundImage = (zip, filename) => {
     console.log(filename);
-    // zip
-    // .file(filename)
-    // .async('base64')
-    // .then(function success(content) {
-    //   console.log(content);
-    //   // $element.prepend('<img src="data:image/png;base64,' + content + '">');
-    // }, function error(e) {
-    //     // handle the error
-    //     console.log('error', e);
-    // });
+    zip
+    .file(filename)
+    .async('base64')
+    .then(function success(content) {
+      console.log(content);
+      // $element.prepend('<img src="data:image/png;base64,' + content + '">');
+    }, function error(e) {
+        // handle the error
+        console.log('error', e);
+    });
   };
   
-  handleBackgroundImage = function (zip, filename){
+  handleBackgroundImage = (zip, filename) => {
     console.log(filename)
-    // zip
-    // .file(filename)
-    // .async('base64')
-    // .then(function success(content) {
-    //   console.log(content);
-    //   // $element.css('background-image', 'url(data:image/png;base64,' + content + ')');
-    // }, function error(e) {
-    //     // handle the error
-    //     console.log('error', e);
-    // });
+    zip
+    .file(filename)
+    .async('base64')
+    .then(function success(content) {
+      console.log(content);
+      // $element.css('background-image', 'url(data:image/png;base64,' + content + ')');
+    }, function error(e) {
+        // handle the error
+        console.log('error', e);
+    });
   };
-  handleJsonData = function (zip, filename){
+  handleJsonData =  (zip, filename) => {
     console.log(filename)
-    // zip
-    // .file(filename)
-    // .async('string')
-    // .then(function success(content) {
-    //   const passData = JSON.parse(content);     
-    //   console.log(passData);
-    // })
+    zip
+    .file(filename)
+    .async('string')
+    .then(function success(content) {
+      const passData = JSON.parse(content);     
+      console.log(passData);
+    })
   }
 
   handleFile(file) {
     console.log(file.name)
     console.log(file)
+    const handleJsonData = this.handleJsonData;
+    const handleForegroundImage = this.handleForegroundImage;
+    const handleBackgroundImage = this.handleBackgroundImage;
     JSZip.loadAsync(file)                                   
       .then(function(zip) {
         zip.forEach(function (index, zipEntry) {
@@ -63,31 +66,31 @@ class App extends React.Component {
           console.log(zipEntry.name)
         switch (zipEntry.name) {
           case 'pass.json':
-            this.handleJsonData(zip, zipEntry.name);
+            handleJsonData(zip, zipEntry.name);
             break;
           case 'logo.png':
-            this.handleForegroundImage(zip, zipEntry.name);
+            handleForegroundImage(zip, zipEntry.name);
             break;
           case 'logo@2x.png':
-            this.handleForegroundImage(zip, zipEntry.name);
+            handleForegroundImage(zip, zipEntry.name);
             break;
           case 'icon.png':
-            this.handleForegroundImage(zip, zipEntry.name);
+            handleForegroundImage(zip, zipEntry.name);
             break;
           case 'icon@x2.png.png':
-            this.handleForegroundImage(zip, zipEntry.name);
+            handleForegroundImage(zip, zipEntry.name);
             break;
           case 'thumbnail.png':
-            this.handleForegroundImage(zip, zipEntry.name);
+            handleForegroundImage(zip, zipEntry.name);
             break;
           case 'background.png':
-            this.handleBackgroundImage(zip, zipEntry.name);
+            handleBackgroundImage(zip, zipEntry.name);
             break;
           case 'strip.png':
-            this.handleBackgroundImage(zip, zipEntry.name);
+            handleBackgroundImage(zip, zipEntry.name);
             break;
           case 'manifest.json':
-            this.handleJsonData(zip, zipEntry.name);
+            handleJsonData(zip, zipEntry.name);
             break;
           default:
             console.log('default');
