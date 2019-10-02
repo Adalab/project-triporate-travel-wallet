@@ -23,31 +23,63 @@ class List extends React.Component {
         <ul className="list__cards">
           {boardingList
           .map((item, index) =>{
-            return(
-              <li key={index} className="list__card">
-                <Link className="card__link" to={`/detail/${item.serialNumber}`}>
-                  <div className="card__info-wrapper">
-                    <div className="card__logo-wrapper">
-                      <img src={`data:image/png;base64,${item.logo}`} alt="Organization logo" className="card__logo-img"/>
-                      <p className="card__date">{item.departureDate}</p>
-                    </div>
-                    <div className="card__travel-wrapper">
-                      <div className="travel__data-wrapper">
-                        <p className="travel__city">{item.origin}</p>
-                        <p className="travel__time">{item.departureTime}</p>
+            if(item.organizationName === "Iberia"){
+              return(
+                <li key={index} className="list__card">
+                  <Link className="card__link" to={`/detail/${item.serialNumber}`}>
+                    <div className="card__info-wrapper">
+                      <div className="card__logo-wrapper">
+                        <img src={`data:image/png;base64,${item.logo}`} alt="Organization logo" className="card__logo-img"/>
+                        <p className="card__date">{item.departureDate}</p>
                       </div>
-                      <div className="travel__icon">️
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Airplane_silhouette.svg/400px-Airplane_silhouette.svg.png" alt="Transport icon" className="travel__icon-img"/>
+                      <div className="card__travel-wrapper">
+                        <div className="travel__data-wrapper">
+                          <p className="travel__city">{item.origin}</p>
+                          <p className="travel__time">{item.departureTime}</p>
+                        </div>
+                        <div className="travel__icon">️
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Airplane_silhouette.svg/400px-Airplane_silhouette.svg.png" alt="Transport icon" className="travel__icon-img"/>
+                        </div>
+                        <div className="travel__data-wrapper">
+                          <p className="travel__city">{item.destination}</p>
+                          <p className="travel__time">{item.arrivalTime}</p>
+                        </div>
                       </div>
-                      <div className="travel__data-wrapper">
-                        <p className="travel__city">{item.destination}</p>
-                        <p className="travel__time">{item.arrivalTime}</p>
+                    </div> 
+                  </Link>
+                </li>
+              )
+            }
+            else if(item.organizationName === "Renfe"){
+              return(
+                <li key={index} className="list__card">
+                  <Link className="card__link" to={`/detail/${item.serialNumber}`}>
+                    <div className="card__info-wrapper">
+                      <div className="card__logo-wrapper">
+                        <img src={`data:image/png;base64,${item.logo}`} alt="Organization logo" className="card__logo-img"/>
+                        <p className="card__date">{item.departureDate}</p>
                       </div>
-                    </div>
-                  </div> 
-                </Link>
-              </li>
-            )})}
+                      <div className="card__travel-wrapper">
+                        <div className="travel__data-wrapper">
+                          <p className="travel__city">{item.origin}</p>
+                          <p className="travel__time">{item.departureTime}</p>
+                        </div>
+                        <div className="travel__icon">️
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Airplane_silhouette.svg/400px-Airplane_silhouette.svg.png" alt="Transport icon" className="travel__icon-img"/>
+                        </div>
+                        <div className="travel__data-wrapper">
+                          {/* <p className="travel__city">{item.destination}</p> */}
+                          <p className="travel__time">{item.arrivalTime}</p>
+                        </div>
+                      </div>
+                    </div> 
+                  </Link>
+                </li>
+              )
+            }
+
+          })
+            }
         </ul>
         <div className="list__btn-wrapper">
           <p className="list__btn-label">Add ticket</p>

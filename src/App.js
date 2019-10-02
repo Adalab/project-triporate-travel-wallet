@@ -35,7 +35,62 @@ class App extends React.Component {
     .async('string');
       const passData = JSON.parse(content);   
       if( passData.organizationName === "Iberia"){
-        const serialNumber = passData.serialNumber;
+        if(passData.boardingPass.backFields[1].key === 'ff'){
+          const organizationName = passData.organizationName;
+          const serialNumber = passData.serialNumber;
+          const qrCode = passData.barcode.message;
+          const backColor = passData.backgroundColor;
+          const foreColor = passData.foregroundColor;
+          const labelColor = passData.labelColor;
+          const origin = passData.boardingPass.primaryFields[0].value;
+          const originName = passData.boardingPass.primaryFields[0].label;
+          const destination = passData.boardingPass.primaryFields[1].value;
+          const destinationName = passData.boardingPass.primaryFields[1].label;
+          const departureDate = passData.boardingPass.headerFields[0].value;
+          const departureTime = passData.boardingPass.backFields[4].value;
+          const boardingTime = passData.boardingPass.auxiliaryFields[2].value;
+          const arrivalTime = passData.boardingPass.backFields[6].value;
+          const flight = passData.boardingPass.backFields[7].value;
+          const flyingClass = passData.boardingPass.backFields[12].value;
+          const seat = passData.boardingPass.secondaryFields[1].value;
+          const passengerName = passData.boardingPass.backFields[0].value;
+          const frequentFlyer = passData.boardingPass.backFields[1].value;
+          const ticketNumber = passData.boardingPass.backFields[2].value;
+          const operator = passData.boardingPass.backFields[9].value;
+          const bookingCode = passData.boardingPass.backFields[11].value;
+          const terminal = passData.boardingPass.backFields[3].value;
+          const gateClose = passData.boardingPass.backFields[8].value;
+  
+          boardingCard = {
+            'organizationName': organizationName,
+            'serialNumber': serialNumber,
+            'qrCode': qrCode,
+            'backColor': backColor,
+            'foreColor': foreColor,
+            'labelColor': labelColor,
+            'origin': origin,
+            'originName': originName,
+            'destination': destination,
+            'destinationName': destinationName ,
+            'departureDate': departureDate,
+            'departureTime': departureTime,
+            'arrivalTime': arrivalTime,
+            'flight': flight,
+            'flyingClass': flyingClass,
+            'seat': seat,
+            'passengerName': passengerName,
+            'frequentFlyer': frequentFlyer,
+            'operator': operator, 
+            'ticketNumber': ticketNumber,
+            'bookingCode': bookingCode, 
+            'terminal': terminal, 
+            'gateClose': gateClose,
+            'boardingTime':boardingTime
+          }
+          return boardingCard;
+        }else {
+          const organizationName = passData.organizationName;
+          const serialNumber = passData.serialNumber;
         const qrCode = passData.barcode.message;
         const backColor = passData.backgroundColor;
         const foreColor = passData.foregroundColor;
@@ -45,21 +100,21 @@ class App extends React.Component {
         const destination = passData.boardingPass.primaryFields[1].value;
         const destinationName = passData.boardingPass.primaryFields[1].label;
         const departureDate = passData.boardingPass.headerFields[0].value;
-        const departureTime = passData.boardingPass.backFields[4].value;
-        // const boardingTime = passData.boardingTime.auxiliaryFields[2].value;
-        const arrivalTime = passData.boardingPass.backFields[6].value;
-        const flight = passData.boardingPass.backFields[7].value;
-        const flyingClass = passData.boardingPass.backFields[12].value;
+        const departureTime = passData.boardingPass.backFields[3].value;
+        const boardingTime = passData.boardingPass.auxiliaryFields[2].value;
+        const arrivalTime = passData.boardingPass.backFields[5].value;
+        const flight = passData.boardingPass.backFields[6].value;
+        const flyingClass = passData.boardingPass.backFields[11].value;
         const seat = passData.boardingPass.secondaryFields[1].value;
         const passengerName = passData.boardingPass.backFields[0].value;
-        const frequentFlyer = passData.boardingPass.backFields[1].value;
-        const ticketNumber = passData.boardingPass.backFields[2].value;
-        const operator = passData.boardingPass.backFields[9].value;
-        const bookingCode = passData.boardingPass.backFields[11].value;
-        const terminal = passData.boardingPass.backFields[3].value;
-        const gateClose = passData.boardingPass.backFields[8].value;
+        const ticketNumber = passData.boardingPass.backFields[1].value;
+        const operator = passData.boardingPass.backFields[8].value;
+        const bookingCode = passData.boardingPass.backFields[10].value;
+        const terminal = passData.boardingPass.backFields[2].value;
+        const gateClose = passData.boardingPass.backFields[7].value;
 
         boardingCard = {
+          'organizationName': organizationName,
           'serialNumber': serialNumber,
           'qrCode': qrCode,
           'backColor': backColor,
@@ -76,16 +131,20 @@ class App extends React.Component {
           'flyingClass': flyingClass,
           'seat': seat,
           'passengerName': passengerName,
-          'frequentFlyer': frequentFlyer,
+          'frequentFlyer': '',
           'operator': operator, 
           'ticketNumber': ticketNumber,
           'bookingCode': bookingCode, 
           'terminal': terminal, 
-          'gateClose': gateClose
+          'gateClose': gateClose,
+          'boardingTime':boardingTime
         }
         return boardingCard;
+        }
+        
       }
       else if(passData.organizationName === "Renfe"){
+        const organizationName = passData.organizationName;
         const serialNumber = passData.serialNumber;
         const qrCode = passData.barcode.message;
         const backColor = passData.backgroundColor;
@@ -107,10 +166,11 @@ class App extends React.Component {
         const fee = passData.boardingPass.backFields[4].value;
         const price = passData.boardingPass.backFields[5].value;
         const cercania = passData.boardingPass.backFields[7].label;
-        const conditions = passData.boardingPass.backFields[10].value;
+        // const conditions = passData.boardingPass.backFields[10].value;
 
 
         boardingCard = {
+          'organizationName': organizationName,
           'serialNumber' : serialNumber,
           'qrCode': qrCode,
           'backColor': backColor,
@@ -131,7 +191,7 @@ class App extends React.Component {
           'fee' : fee, 
           'price' : price, 
           'cercania' : cercania, 
-          'conditions' : conditions
+          // 'conditions' : conditions
         }
         return boardingCard;
       }
@@ -148,7 +208,7 @@ class App extends React.Component {
         const departureDate = passData.relevantDate;
         //se puee pasar a Iberia si se convierte el formato. Nos vale para Fecha & Hora. 
         const departureTime = passData.boardingPass.backFields[4].value;
-        // const boardingTime = passData.boardingTime.auxiliaryFields[2].value;
+        
         //We need to make conditionals for other companies as they have the field in different places.  
         // const arrivalTime = passData.boardingPass.backFields[6].value;
         const flight = passData.boardingPass.backFields[7].value;
@@ -173,6 +233,7 @@ class App extends React.Component {
           'flyingClass': flyingClass,
           'seat': seat,
           'passengerName': passengerName,
+          
         }
         return boardingCard;
       }
