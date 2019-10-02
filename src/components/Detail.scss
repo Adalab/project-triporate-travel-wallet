@@ -5,3 +5,177 @@
     display: none;
   }
 }
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 95vh;
+  border-radius: 25px;
+  background-color: white;
+  background-image: linear-gradient(to right bottom, #8B2973, #8B2973);
+  background-size: 100% 41%;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.link-go-back {
+  color:white;
+  font-weight: 700;
+}
+
+.go-back-icon {
+  color:white;
+  font-weight: 700; 
+}
+
+.detail__card {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.171);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  margin-top:5%;
+  border-radius: 25px;
+  height: 82%;
+}
+
+.detail__card__header {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__flight {
+  max-width: 100px;
+  text-align: end;
+  padding:10px;
+  color:#707070;
+}
+
+.detail_logo {
+  max-width: 70px;
+}
+
+.detail__places {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.detail__data-wrapper {
+  padding:20px 25px;
+}
+
+.detail__city {
+  padding: 5% 20px;
+  font-size: 25px;
+}
+
+.detail__time {
+  font-size: 18px;
+  color:#707070;
+}
+
+.detail__travel-icon {
+  display: flex;
+}
+
+.detail__icon-img {
+  width:30px;
+  justify-content: center;
+  align-self: center;
+}
+
+//BANDA GRIS
+
+.detail__info-list {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(239, 239, 239, 0.781);
+  text-align: center;
+}
+
+.detail__info-element {
+  padding:5px 10px;
+  border-right:1px solid #6868636c;
+}
+
+.detail__info-element:last-child {
+  border-right:1px solid transparent;
+}
+
+.element__info-content {
+  padding:5px;
+  font-weight: 600;
+  color:#242422d0;
+  font-size: 16px;
+}
+
+.element__info-title {
+color:#707070;
+font-size: 12px;
+}
+
+
+//QR ZONE
+
+.detail__user-name {
+  margin:20px;
+}
+
+.user__name-title {
+  color:#707070;
+  font-size: 16px;
+}
+
+.detail__qr-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10%;
+}
+
+.boarding__info {
+  margin:5px 20px;
+}
+
+.user__boarding-title {
+  max-width: 80px;
+  color:#707070;
+  font-size: 16px;
+  padding: 0 0 10px;
+}
+
+.qr__small {
+  width: 70px;
+  margin-right: 20px;
+}
+
+.detail__btn-wrapper  {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.detail__btn-label {
+  width: 70px;
+  padding-top: 5px;
+  text-transform: uppercase;
+  color:#707070;
+}
+
+.detail__btn-more {
+  width: 40px;
+  height: 40px;
+  border-radius: 80px;
+  background-color: #65535373;
+  font-size: 25px;
+  padding-bottom: 5px;
+  color:white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

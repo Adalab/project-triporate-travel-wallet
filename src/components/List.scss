@@ -1,0 +1,100 @@
+.list {
+  padding: 20px;
+  height: 95vh;
+  border-radius: 25px;
+  background-color: #EFEFEF;
+  position: relative;
+}
+
+.list__title {
+  color: #353434b2;
+}
+
+.list__card {
+  height: 120px;
+  margin: 20px 0;
+  border-radius: 25px;
+  background-color: #8B2973;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__link {
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+.card__info-wrapper {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card__logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left:10px;
+}
+
+.card__logo-img {
+  max-width: 60px;
+}
+
+.card__date {
+  padding-top: 10px;
+}
+
+.card__travel-wrapper {
+  display: flex;
+}
+
+.travel__data-wrapper {
+  margin: 0 10px;
+}
+
+.travel__city {
+  padding: 5px;
+}
+
+.travel__time {
+  padding: 5px;
+}
+
+.travel__icon-img {
+  width: 15px;
+}
+
+.list__btn-wrapper {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.list__btn-label {
+  width: 70px;
+  padding-top: 5px;
+  text-transform: uppercase;
+  color:#707070;
+}
+
+.list__btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 80px;
+  background-color: #65535373;
+  font-size: 25px;
+  padding-bottom: 5px;
+  color:white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.list__input {
+  display: none;
+}

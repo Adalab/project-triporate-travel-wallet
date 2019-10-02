@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.scss';
 import {Switch, Route} from 'react-router-dom';
 import List from './components/List';
 import Detail from './components/Detail';
@@ -144,7 +145,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Switch>
           <Route exact path = "/" render = {routerProps => (<List 
           getInputFile = {this.getInputFile}
