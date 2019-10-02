@@ -1,15 +1,17 @@
 .list {
-  margin: 15px;
   padding: 20px;
+  height: 95vh;
   border-radius: 25px;
   background-color: #EFEFEF;
+  position: relative;
 }
 
 .list__card {
   height: 120px;
   margin: 20px 0;
   border-radius: 25px;
-  background-color: yellowgreen;
+  background-color: #8B2973;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,8 +29,18 @@
   justify-content: space-around;
 }
 
+.card__logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .card__logo-img {
   width: 70px;
+}
+
+.card__date {
+  padding-top: 10px;
 }
 
 .card__travel-wrapper {
@@ -39,11 +51,22 @@
   margin: 0 25px;
 }
 
+.travel__city {
+  padding: 5px;
+}
+
+.travel__time {
+  padding: 5px;
+}
+
 .travel__icon-img {
   width: 15px;
 }
 
 .list__btn-wrapper {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
   display: flex;
   justify-content: flex-end;
 }

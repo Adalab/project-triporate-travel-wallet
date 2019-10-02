@@ -28,7 +28,7 @@ class List extends React.Component {
                 <Link className="card__link" to={`/detail/${item}`}>
                   <div className="card__info-wrapper">
                     <div className="card__logo-wrapper">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Logotipo_de_Iberia.svg/1280px-Logotipo_de_Iberia.svg.png" alt="Organization logo" className="card__logo-img"/>
+                      <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" alt="Organization logo" className="card__logo-img"/>
                       <p className="card__date">02/07/20</p>
                     </div>
                     <div className="card__travel-wrapper">
@@ -40,7 +40,7 @@ class List extends React.Component {
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Airplane_silhouette.svg/400px-Airplane_silhouette.svg.png" alt="Transport icon" className="travel__icon-img"/>
                       </div>
                       <div className="travel__data-wrapper">
-                        <p className="travel__city">MAD</p>
+                        <p className="travel__city">BCN</p>
                         <p className="travel__time">21:30</p>
                       </div>
 
