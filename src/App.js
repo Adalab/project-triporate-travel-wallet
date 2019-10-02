@@ -20,15 +20,22 @@ class App extends React.Component {
     .async('base64')
     .then((content) => {
       const logoImage = content;
+      console.log()
       const boardingCard = {
         'logoImage': logoImage
       }
-      // this.setState({boardingList[0]logoImage});
 
-    }, function error(e) {
+ 
+      
+        this.setState(prevState => ({
+          boardingList: [...prevState.boardingList, boardingCard]
+          
+
+        }), function error(e) {
         console.log('error', e);
     });
-  };
+  })
+}
   
   handleBackgroundImage = (zip, filename) => {
     console.log(filename)
