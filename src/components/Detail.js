@@ -84,16 +84,18 @@ class Detail extends React.Component {
             </div>
           </div>
 
-          <div className="detail__btn-wrapper">
-            <p className="detail__btn-label">Add ticket</p>
-            <button
-              className="detail__btn-more"
-              type="button"
-              name="add_img"
-              // onClick={this.handleFilePicker}
-            >+
-            </button>
-          </div>
+          <Link to = "/">
+            <div className="detail__btn-wrapper">
+              <p className="detail__btn-label">More info</p>
+              <button
+                className="detail__btn-more"
+                type="button"
+                name="add_img"
+                // onClick={this.handleFilePicker}
+              >+
+              </button>
+            </div>
+          </Link>  
         </div>
       </React.Fragment>
 
