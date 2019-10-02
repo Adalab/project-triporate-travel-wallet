@@ -1,31 +1,30 @@
 .list {
-  margin: 0 15px;
+  margin: 15px;
+  padding: 20px;
   border-radius: 25px;
   background-color: #EFEFEF;
 }
 
-.list__cards {
-}
-
 .list__card {
   height: 120px;
-  margin: 20px;
+  margin: 20px 0;
   border-radius: 25px;
   background-color: yellowgreen;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .card__link {
-  display: flex;
-  align-self: center;
+  justify-content: center;
+  align-items: center;
+  width:100%;
 }
 
 .card__info-wrapper {
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .card__logo-img {
@@ -34,7 +33,10 @@
 
 .card__travel-wrapper {
   display: flex;
-  justify-content: space-between;
+}
+
+.travel__data-wrapper {
+  margin: 0 25px;
 }
 
 .travel__icon-img {
@@ -43,10 +45,19 @@
 
 .list__btn-wrapper {
   display: flex;
+  justify-content: flex-end;
 }
 
 .list__btn-label {
+  width: 70px;
+  padding-top: 5px;
   text-transform: uppercase;
+}
+
+.list__btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 80px;
 }
 
 .list__input {
