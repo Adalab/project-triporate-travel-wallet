@@ -77,8 +77,8 @@ class Detail extends React.Component {
                   <QRCode                                     value="755190101463160911600002706190518300510B115885YS3..CFTUB" 
                     bgColor="#FFFF"
                     fgColor="#000"
-                    size="200"
-                    includeMargin="true"
+                    size={200}
+                    includeMargin={true}
                     className="qr__small"
                     //{passData.barcode.message}
                   /> 
