@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.scss';
-import {Switch, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import List from './components/List';
 import Detail from './components/Detail';
+import QrDetail from './components/QrDetail';
+import Back from './components/Back';
 import JSZip from 'jszip';
 
 class App extends React.Component {
@@ -143,7 +145,6 @@ class App extends React.Component {
   handleFile(file) {
     const handleJsonData = this.handleJsonData;
     const handleForegroundImage = this.handleForegroundImage;
-    const handleBackgroundImage = this.handleBackgroundImage;
     JSZip.loadAsync(file)                                   
       .then(function(zip) {
         zip.forEach(function (index, zipEntry) {
@@ -187,17 +188,20 @@ handleFilePicker() {
   render() {
     return (
       <div className="app">
-        <Switch>
-          <Route exact path = "/" render = {routerProps => (<List 
+        <Route exact path = "/" render = {routerProps => (
+        <List 
           getInputFile = {this.getInputFile}
           handleFilePicker = {this.handleFilePicker}
           routerProps = {routerProps}
-          />)}/>
-          <Route  path = "/detail/:id" render = {routerProps => (<Detail 
+        />)}/>
 
-          routerProps = {routerProps}
-          />)}></Route>
-        </Switch>
+        <Route exact path="/detail/:id" render={routerProps => <Detail routerProps={routerProps} />}></Route>
+
+        <Route exact path = "/qrDetail/:id" render = {routerProps => 
+        (<QrDetail routerProps = {routerProps}/>)
+        }/>
+
+        <Route exact path="/back/:id" render={routerProps => <Back routerProps={routerProps}/>}/>
       </div>
     );
   }
