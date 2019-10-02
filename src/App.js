@@ -8,49 +8,28 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      boardingList:[]
+      boardingList:[],
     };
     this.getInputFile= this.getInputFile.bind(this);
     this.handleFile = this.handleFile.bind(this);
   }
 
-  handleForegroundImage = (zip, filename) => {
+  handleForegroundImage = (zip, filename, json) => {
     zip
     .file(filename)
     .async('base64')
-    .then((content) => {
-      const logoImage = content;
-      console.log()
-      const boardingCard = {
-        'logoImage': logoImage
-      }
-
- 
-      
-        this.setState(prevState => ({
-          boardingList: [...prevState.boardingList, boardingCard]
-          
-
-        }), function error(e) {
-        console.log('error', e);
-    });
-  })
+    .then((content) => {    
+      const obj = json;
+      obj['logo']= content ;
+      console.log(obj)
+      this.setState(prevState => ({
+            boardingList: [...prevState.boardingList, obj]
+        }))
+    })
 }
-  
-  handleBackgroundImage = (zip, filename) => {
-    console.log(filename)
-    zip
-    .file(filename)
-    .async('base64')
-    .then(function success(content) {
 
-      }, function error(e) {
-        console.log('error', e);
-      }
-    );
-  };
-
-  handleJsonData =  (zip, filename) => {
+  handleJsonData =(zip, filename) => {
+    const handleForegroundImage= this.handleForegroundImage;
     zip
     .file(filename)
     .async('string')
@@ -74,7 +53,6 @@ class App extends React.Component {
         const flyingClass = passData.boardingPass.backFields[12].value;
         const seat = passData.boardingPass.secondaryFields[1].value;
         const passengerName = passData.boardingPass.backFields[0].value;
-
         const  boardingCard = {
           'primColor': primColor,
           'origin': origin,
@@ -89,11 +67,10 @@ class App extends React.Component {
           'seat': seat,
           'passengerName': passengerName,
           'qrCode': qrCode,
-          'serialNumber': serialNumber
+          'serialNumber': serialNumber,
         }
-        this.setState(prevState => ({
-          boardingList: [...prevState.boardingList, boardingCard]
-      }))
+
+        handleForegroundImage(zip, filename, boardingCard) 
          }
       else if(passData.organizationName === "Renfe"){
         const qrCode = passData.barcode.message;
@@ -126,9 +103,7 @@ class App extends React.Component {
           'ticketNumber': ticketNumber,
           'ticketIdentify':ticketIdentify
         }
-        this.setState(prevState => ({
-          boardingList: [...prevState.boardingList, boardingCard]
-      }))
+        handleForegroundImage(zip, filename, boardingCard) ;
       }
       else{
 
@@ -145,21 +120,22 @@ class App extends React.Component {
       .then(function(zip) {
         zip.forEach(function (index, zipEntry) {
           switch (zipEntry.name) {
+            // case 'logo.png':
+            //   handleForegroundImage(zip, zipEntry.name);
+            //   break;
             case 'pass.json':
-              handleJsonData(zip, zipEntry.name);
+              handleJsonData(zip, zipEntry.name)
               break;
-            case 'logo.png':
-              handleForegroundImage(zip, zipEntry.name);
-              break;
-            case 'logo@2x.png':
-              handleForegroundImage(zip, zipEntry.name);
-              break;
-            case 'icon.png':
-              handleForegroundImage(zip, zipEntry.name);
-              break;
-            case 'icon@x2.png.png':
-              handleForegroundImage(zip, zipEntry.name);
-              break;
+
+            // case 'logo@2x.png':
+            //   handleForegroundImage(zip, zipEntry.name);
+            //   break;
+            // case 'icon.png':
+            //   handleForegroundImage(zip, zipEntry.name);
+            //   break;
+            // case 'icon@x2.png.png':
+            //   handleForegroundImage(zip, zipEntry.name);
+            //   break;
             default:
               console.log('default');
               break;
