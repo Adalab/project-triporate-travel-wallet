@@ -18,8 +18,13 @@ class App extends React.Component {
     zip
     .file(filename)
     .async('base64')
-    .then(function success(content) {
-      
+    .then((content) => {
+      const logoImage = content;
+      const boardingCard = {
+        'logoImage': logoImage
+      }
+      // this.setState({boardingList[0]logoImage});
+
     }, function error(e) {
         console.log('error', e);
     });
@@ -63,19 +68,6 @@ class App extends React.Component {
         const seat = passData.boardingPass.secondaryFields[1].value;
         const passengerName = passData.boardingPass.backFields[0].value;
 
-        console.log(primColor);
-        console.log(origin);
-        console.log(originName);
-        console.log(destination);
-        console.log(destinationName);
-        console.log(departureDate);
-        console.log(departureTime);
-        // console.log(boardingTime);
-        console.log(arrivalTime);
-        console.log(flight);
-        console.log(flyingClass);
-        console.log(seat);
-        console.log(passengerName);
         const  boardingCard = {
           'primColor': primColor,
           'origin': origin,
@@ -112,16 +104,6 @@ class App extends React.Component {
         const seat = passData.boardingPass.auxiliaryFields[2].value;
         const trainClass = passData.boardingPass.auxiliaryFields[3].value;
 
-        console.log(primColor);
-        console.log(originName);
-        console.log(destinationName);
-        console.log(departureDate);
-        console.log(departureTime);
-        console.log(arrivalTime);
-        console.log(train);
-        console.log(trainClass);
-        console.log(seat);
-        console.log(car);
         const  boardingCard = {
           'primColor': primColor,
           'originName': originName,
@@ -185,7 +167,6 @@ class App extends React.Component {
     const files = event.target.files;
     for (let i = 0; i < files.length; i++) {
         this.handleFile(files[i]);
-        console.log(i);
     }
 }
 
