@@ -15,6 +15,11 @@
   position: relative;
 }
 
+.link-go-back {
+  color:white;
+  font-weight: 700;
+}
+
 .detail__card {
   background-color: white;
   margin-top:10px;
@@ -122,4 +127,8 @@ font-size: 12px;
 .qr__small {
   width: 70px;
   margin-right: 20px;
+}
+
+.detail__btn-wrapper {
+
 }
