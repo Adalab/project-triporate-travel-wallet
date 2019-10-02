@@ -14,7 +14,13 @@ class App extends React.Component {
     this.getInputFile= this.getInputFile.bind(this);
     this.handleFile = this.handleFile.bind(this);
   }
+  componentDidMount(){
+    const obj = (JSON.parse(localStorage.getItem('boardingList')))
+    if(obj!== null){
 
+      this.setState({boardingList:obj})
+    }
+  }
   handleForegroundImage = async (zip, filename) => {
     const content = await zip
     .file(filename)
@@ -206,7 +212,8 @@ class App extends React.Component {
         }
         this.setState(prevState => ({
           boardingList: [...prevState.boardingList, json]
-        }))      
+        })) 
+        localStorage.setItem('boardingList', JSON.stringify(this.state.boardingList));     
       }
     )     
   }
