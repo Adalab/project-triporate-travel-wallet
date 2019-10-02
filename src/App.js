@@ -104,7 +104,6 @@ class App extends React.Component {
         const flyingClass = passData.boardingPass.backFields[11].value;
         const seat = passData.boardingPass.secondaryFields[1].value;
         const passengerName = passData.boardingPass.backFields[0].value;
-       
         const ticketNumber = passData.boardingPass.backFields[1].value;
         const operator = passData.boardingPass.backFields[8].value;
         const bookingCode = passData.boardingPass.backFields[10].value;
