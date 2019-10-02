@@ -7,11 +7,16 @@
 }
 
 .detail {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   height: 95vh;
   border-radius: 25px;
-  background-color: #8B2973;
-  // background-size: 0 50%;
+  background-color: white;
+  background-image: linear-gradient(to right bottom, #8B2973, #8B2973);
+  background-size: 100% 41%;
+  background-position-y: top;
+  background-repeat: no-repeat;
   position: relative;
 }
 
@@ -20,14 +25,24 @@
   font-weight: 700;
 }
 
+.go-back-icon {
+  color:white;
+  font-weight: 700; 
+}
+
 .detail__card {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.171);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: white;
-  margin-top:10px;
+  margin-top:5%;
   border-radius: 25px;
+  height: 82%;
 }
 
 .detail__card__header {
-  padding:10px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +70,13 @@
 }
 
 .detail__city {
-  padding: 15px 20px;
+  padding: 5% 20px;
+  font-size: 25px;
+}
+
+.detail__time {
+  font-size: 18px;
+  color:#707070;
 }
 
 .detail__travel-icon {
@@ -72,14 +93,18 @@
 
 .detail__info-list {
   display: flex;
-  justify-content: space-around;
-  background-color: #d0d1c37a;
+  justify-content: center;
+  background-color: rgba(239, 239, 239, 0.781);
   text-align: center;
 }
 
 .detail__info-element {
   padding:5px 10px;
-  border-right:1px solid #686863d0;
+  border-right:1px solid #6868636c;
+}
+
+.detail__info-element:last-child {
+  border-right:1px solid transparent;
 }
 
 .element__info-content {
@@ -104,17 +129,17 @@ font-size: 12px;
 .user__name-title {
   color:#707070;
   font-size: 16px;
-  padding:15px 0;
 }
 
 .detail__qr-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  margin-bottom: 10%;
 }
 
 .boarding__info {
-  margin:10px 20px;
+  margin:5px 20px;
 }
 
 .user__boarding-title {
@@ -129,6 +154,28 @@ font-size: 12px;
   margin-right: 20px;
 }
 
-.detail__btn-wrapper {
+.detail__btn-wrapper  {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
 
+.detail__btn-label {
+  width: 70px;
+  padding-top: 5px;
+  text-transform: uppercase;
+  color:#707070;
+}
+
+.detail__btn-more {
+  width: 40px;
+  height: 40px;
+  border-radius: 80px;
+  background-color: #65535373;
+  font-size: 25px;
+  padding-bottom: 5px;
+  color:white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

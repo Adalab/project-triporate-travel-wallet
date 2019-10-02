@@ -17,7 +17,7 @@ class Detail extends React.Component {
         <List />
         </div>
         <div className="detail">     
-          <Link to = "/">&lt;</Link>      
+          <Link className="link-go-back" to = "/"> <span className="go-back-icon">&lt;</span></Link>      
           <div className="detail__card">
           <div className="detail__card__header">
             <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" alt="Organization logo" className="detail_logo"/>
