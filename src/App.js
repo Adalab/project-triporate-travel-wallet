@@ -45,7 +45,8 @@ class App extends React.Component {
     .then((content) => {
       const passData = JSON.parse(content);   
       if( passData.organizationName === "Iberia"){
-        
+        const qrCode = passData.barcode.message;
+        const serialNumber = passData.serialNumber;
         const primColor = passData.backgroundColor;
         const origin = passData.boardingPass.primaryFields[0].value;
         const originName = passData.boardingPass.primaryFields[0].label;
@@ -87,13 +88,18 @@ class App extends React.Component {
           'flight': flight,
           'flyingClass': flyingClass,
           'seat': seat,
-          'passengerName': passengerName
+          'passengerName': passengerName,
+          'qrCode': qrCode,
+          'serialNumber': serialNumber
         }
         this.setState(prevState => ({
           boardingList: [...prevState.boardingList, boardingCard]
       }))
          }
       else if(passData.organizationName === "Renfe"){
+        const qrCode = passData.barcode.message;
+        const ticketNumber = passData.boardingPass.backFields[0].value;
+        const ticketIdentify = passData.boardingPass.secondaryFields[1].value;
         const primColor = passData.labelColor;
         const originName = passData.boardingPass.primaryFields[0].label;
         const destinationName = passData.boardingPass.primaryFields[1].label;
@@ -126,7 +132,10 @@ class App extends React.Component {
           'train': train,
           'trainClass': trainClass,
           'seat': seat,
-          'car': car
+          'car': car,
+          'qrCode': qrCode,
+          'ticketNumber': ticketNumber,
+          'ticketIdentify':ticketIdentify
         }
         this.setState(prevState => ({
           boardingList: [...prevState.boardingList, boardingCard]
