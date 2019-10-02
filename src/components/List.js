@@ -20,7 +20,7 @@ class List extends React.Component {
     const Array = [1, 2, 3];
     return (
       <div className="list">
-        <h1 className="">MY TRAVEL WALLET.</h1>
+        <h1 className="list__title">MY TRAVEL WALLET.</h1>
         <ul className="list__cards">
           {Array.map((item, index) =>{
             return(
