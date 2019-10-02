@@ -14,26 +14,18 @@ class App extends React.Component {
     this.handleFile = this.handleFile.bind(this);
   }
 
-  handleForegroundImage = (zip, filename, json) => {
-    zip
+  handleForegroundImage = async (zip, filename) => {
+    const content = await zip
     .file(filename)
-    .async('base64')
-    .then((content) => {    
-      const obj = json;
-      obj['logo']= content ;
-      console.log(obj)
-      this.setState(prevState => ({
-            boardingList: [...prevState.boardingList, obj]
-        }))
-    })
-}
+    .async('base64');
+    return content;
+  }
 
-  handleJsonData =(zip, filename) => {
-    const handleForegroundImage= this.handleForegroundImage;
-    zip
+  handleJsonData =async(zip, filename) => {
+    let boardingCard = {};
+    const content = await zip
     .file(filename)
-    .async('string')
-    .then((content) => {
+    .async('string');
       const passData = JSON.parse(content);   
       if( passData.organizationName === "Iberia"){
         const qrCode = passData.barcode.message;
@@ -48,12 +40,11 @@ class App extends React.Component {
         // const boardingTime = passData.boardingTime.auxiliaryFields[2].value;
         const arrivalTime = passData.boardingPass.backFields[6].value;
 
-        // const terminal = '';
         const flight = passData.boardingPass.backFields[7].value;
         const flyingClass = passData.boardingPass.backFields[12].value;
         const seat = passData.boardingPass.secondaryFields[1].value;
         const passengerName = passData.boardingPass.backFields[0].value;
-        const  boardingCard = {
+        boardingCard = {
           'primColor': primColor,
           'origin': origin,
           'originName': originName,
@@ -69,9 +60,8 @@ class App extends React.Component {
           'qrCode': qrCode,
           'serialNumber': serialNumber,
         }
-
-        handleForegroundImage(zip, filename, boardingCard) 
-         }
+        return boardingCard;
+      }
       else if(passData.organizationName === "Renfe"){
         const qrCode = passData.barcode.message;
         const ticketNumber = passData.boardingPass.backFields[0].value;
@@ -82,13 +72,12 @@ class App extends React.Component {
         const departureDate = passData.boardingPass.headerFields[0].value;
         const departureTime = passData.boardingPass.primaryFields[0].value;
         const arrivalTime = passData.boardingPass.primaryFields[1].value;
-
         const train = passData.boardingPass.auxiliaryFields[0].value;
         const car = passData.boardingPass.auxiliaryFields[1].value;
         const seat = passData.boardingPass.auxiliaryFields[2].value;
         const trainClass = passData.boardingPass.auxiliaryFields[3].value;
 
-        const  boardingCard = {
+        boardingCard = {
           'primColor': primColor,
           'originName': originName,
           'destinationName': destinationName ,
@@ -103,66 +92,62 @@ class App extends React.Component {
           'ticketNumber': ticketNumber,
           'ticketIdentify':ticketIdentify
         }
-        handleForegroundImage(zip, filename, boardingCard) ;
+        return boardingCard;
       }
-      else{
-
-      }
-      
-    })
   };
 
   handleFile(file) {
     const handleJsonData = this.handleJsonData;
     const handleForegroundImage = this.handleForegroundImage;
-    const handleBackgroundImage = this.handleBackgroundImage;
+    let json = {}; 
     JSZip.loadAsync(file)                                   
-      .then(function(zip) {
-        zip.forEach(function (index, zipEntry) {
-          switch (zipEntry.name) {
-            // case 'logo.png':
-            //   handleForegroundImage(zip, zipEntry.name);
-            //   break;
+      .then( async(zip) => {      
+        for(let zipEntry in zip.files){     
+          switch (zipEntry) {
             case 'pass.json':
-              handleJsonData(zip, zipEntry.name)
+              json = await handleJsonData(zip, zipEntry);
               break;
-
-            // case 'logo@2x.png':
-            //   handleForegroundImage(zip, zipEntry.name);
-            //   break;
-            // case 'icon.png':
-            //   handleForegroundImage(zip, zipEntry.name);
-            //   break;
-            // case 'icon@x2.png.png':
-            //   handleForegroundImage(zip, zipEntry.name);
-            //   break;
             default:
-              console.log('default');
               break;
-            }
-          }
-        )
+          } 
+        }
+        for(let zipEntry in zip.files){   
+          switch (zipEntry) {
+            case 'logo.png':
+              json['logo']= await handleForegroundImage(zip, zipEntry);
+              break;
+            case 'logo@2x.png':
+              json['logoRetina'] = await handleForegroundImage(zip, zipEntry);
+              break;
+            case 'icon.png':
+              json['icon'] = await handleForegroundImage(zip, zipEntry);
+              break;
+            case 'icon@x2.png.png':
+              json['iconRetina'] = await handleForegroundImage(zip, zipEntry);  break;
+            default:
+              break;
+          }  
+        }
+        this.setState(prevState => ({
+          boardingList: [...prevState.boardingList, json]
+        }))      
       }
-    )
-}
+    )     
+  }
+
   getInputFile(event){
     console.log(event.target.files);
     const files = event.target.files;
     for (let i = 0; i < files.length; i++) {
         this.handleFile(files[i]);
     }
-}
-
-handleFilePicker() {
-  this.myFileField.current.click();
-}
+  }
   render() {
     return (
       <div className="App">
         <Switch>
           <Route exact path = "/" render = {routerProps => (<List 
           getInputFile = {this.getInputFile}
-          handleFilePicker = {this.handleFilePicker}
           />)}/>
           <Route  path = "/detail" component = {Detail}></Route>
         </Switch>
