@@ -5,3 +5,114 @@
     display: none;
   }
 }
+
+.detail {
+  padding: 20px;
+  height: 95vh;
+  border-radius: 25px;
+  background-color: #8B2973;
+  // background-size: 0 50%;
+  position: relative;
+}
+
+.detail__card {
+  background-color: white;
+  margin-top:10px;
+  border-radius: 25px;
+}
+
+.detail__card__header {
+  padding:10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__flight {
+  max-width: 100px;
+  text-align: end;
+  padding:10px;
+  color:#707070;
+}
+
+.detail_logo {
+  max-width: 70px;
+}
+
+.detail__places {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.detail__data-wrapper {
+  padding:20px 25px;
+}
+
+.detail__city {
+  padding: 15px 20px;
+}
+
+.detail__travel-icon {
+  display: flex;
+}
+
+.detail__icon-img {
+  width:30px;
+  justify-content: center;
+  align-self: center;
+}
+
+//BANDA GRIS
+
+.detail__info-list {
+  display: flex;
+  justify-content: space-around;
+  background-color: #d0d1c37a;
+  text-align: center;
+}
+
+.detail__info-element {
+  padding:5px 10px;
+  border-right:1px solid #686863d0;
+}
+
+.element__info-content {
+  padding:5px;
+  font-weight: 600;
+  color:#242422d0;
+  font-size: 16px;
+}
+
+.element__info-title {
+color:#707070;
+font-size: 12px;
+}
+
+
+//QR ZONE
+
+.detail__user-name {
+  margin:20px;
+}
+
+.user__name-title {
+  color:#707070;
+  font-size: 16px;
+  padding:15px 0;
+}
+
+.user__name-content {
+  font-weight: 540;
+}
+
+.detail__qr-wrapper {
+  display: flex;
+}
+
+.boarding__info {}
+
+
+.qr__small {
+  width: 80px;
+}

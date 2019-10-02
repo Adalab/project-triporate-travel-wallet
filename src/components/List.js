@@ -43,7 +43,6 @@ class List extends React.Component {
                         <p className="travel__city">BCN</p>
                         <p className="travel__time">21:30</p>
                       </div>
-
                     </div>
                   </div> 
                 </Link>
