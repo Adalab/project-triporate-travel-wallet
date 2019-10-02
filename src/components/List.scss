@@ -1,0 +1,54 @@
+.list {
+  margin: 0 15px;
+  border-radius: 25px;
+  background-color: #EFEFEF;
+}
+
+.list__cards {
+}
+
+.list__card {
+  height: 120px;
+  margin: 20px;
+  border-radius: 25px;
+  background-color: yellowgreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__link {
+  display: flex;
+  align-self: center;
+}
+
+.card__info-wrapper {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__logo-img {
+  width: 70px;
+}
+
+.card__travel-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.travel__icon-img {
+  width: 15px;
+}
+
+.list__btn-wrapper {
+  display: flex;
+}
+
+.list__btn-label {
+  text-transform: uppercase;
+}
+
+.list__input {
+  display: none;
+}
