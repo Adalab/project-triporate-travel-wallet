@@ -231,8 +231,12 @@ class App extends React.Component {
         <Switch>
           <Route exact path = "/" render = {routerProps => (<List 
           getInputFile = {this.getInputFile}
+          boardingList = {this.state.boardingList}
           />)}/>
-          <Route  path = "/detail" component = {Detail}></Route>
+          <Route  path = "/detail/:id" render = {routerProps => (<Detail 
+          routerProps = {routerProps}
+          boardingList = {this.state.boardingList}
+          />)}/>
         </Switch>
       </div>
     );

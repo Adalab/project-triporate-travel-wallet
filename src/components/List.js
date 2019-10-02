@@ -16,32 +16,32 @@ class List extends React.Component {
   }
 
   render() {
-    const {getInputFile} = this.props;
-    const Array = [1, 2, 3];
+    const {getInputFile, boardingList} = this.props;
     return (
       <div className="list">
         <h1 className="list__title">MY TRAVEL WALLET.</h1>
         <ul className="list__cards">
-          {Array.map((item, index) =>{
+          {boardingList
+          .map((item, index) =>{
             return(
               <li key={index} className="list__card">
-                <Link className="card__link" to={`/detail/${item}`}>
+                <Link className="card__link" to={`/detail/${item.serialNumber}`}>
                   <div className="card__info-wrapper">
                     <div className="card__logo-wrapper">
-                      <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" alt="Organization logo" className="card__logo-img"/>
-                      <p className="card__date">02/07/20</p>
+                      <img src={`data:image/png;base64,${item.logo}`} alt="Organization logo" className="card__logo-img"/>
+                      <p className="card__date">{item.departureDate}</p>
                     </div>
                     <div className="card__travel-wrapper">
                       <div className="travel__data-wrapper">
-                        <p className="travel__city">MAD</p>
-                        <p className="travel__time">21:30</p>
+                        <p className="travel__city">{item.origin}</p>
+                        <p className="travel__time">{item.departureTime}</p>
                       </div>
                       <div className="travel__icon">️
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Airplane_silhouette.svg/400px-Airplane_silhouette.svg.png" alt="Transport icon" className="travel__icon-img"/>
                       </div>
                       <div className="travel__data-wrapper">
-                        <p className="travel__city">BCN</p>
-                        <p className="travel__time">21:30</p>
+                        <p className="travel__city">{item.destination}</p>
+                        <p className="travel__time">{item.arrivalTime}</p>
                       </div>
                     </div>
                   </div> 
