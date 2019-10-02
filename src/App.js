@@ -36,6 +36,7 @@ class App extends React.Component {
       const passData = JSON.parse(content);   
       if( passData.organizationName === "Iberia"){
         if(passData.boardingPass.backFields[1].key === 'ff'){
+          const organizationName = passData.organizationName;
           const serialNumber = passData.serialNumber;
           const qrCode = passData.barcode.message;
           const backColor = passData.backgroundColor;
@@ -61,6 +62,7 @@ class App extends React.Component {
           const gateClose = passData.boardingPass.backFields[8].value;
   
           boardingCard = {
+            'organizationName': organizationName,
             'serialNumber': serialNumber,
             'qrCode': qrCode,
             'backColor': backColor,
@@ -87,6 +89,7 @@ class App extends React.Component {
           }
           return boardingCard;
         }else {
+          const organizationName = passData.organizationName;
           const serialNumber = passData.serialNumber;
         const qrCode = passData.barcode.message;
         const backColor = passData.backgroundColor;
@@ -111,6 +114,7 @@ class App extends React.Component {
         const gateClose = passData.boardingPass.backFields[7].value;
 
         boardingCard = {
+          'organizationName': organizationName,
           'serialNumber': serialNumber,
           'qrCode': qrCode,
           'backColor': backColor,
@@ -140,6 +144,7 @@ class App extends React.Component {
         
       }
       else if(passData.organizationName === "Renfe"){
+        const organizationName = passData.organizationName;
         const serialNumber = passData.serialNumber;
         const qrCode = passData.barcode.message;
         const backColor = passData.backgroundColor;
@@ -161,10 +166,11 @@ class App extends React.Component {
         const fee = passData.boardingPass.backFields[4].value;
         const price = passData.boardingPass.backFields[5].value;
         const cercania = passData.boardingPass.backFields[7].label;
-        const conditions = passData.boardingPass.backFields[10].value;
+        // const conditions = passData.boardingPass.backFields[10].value;
 
 
         boardingCard = {
+          'organizationName': organizationName,
           'serialNumber' : serialNumber,
           'qrCode': qrCode,
           'backColor': backColor,
@@ -185,7 +191,7 @@ class App extends React.Component {
           'fee' : fee, 
           'price' : price, 
           'cercania' : cercania, 
-          'conditions' : conditions
+          // 'conditions' : conditions
         }
         return boardingCard;
       }
