@@ -71,16 +71,19 @@ class Detail extends React.Component {
                 <p className="user__boarding-title">BOARDING TIME</p>
                 <p className="user__boarding-content">21:45</p>
               </div>
-              <div className="qr__small-wrapper">
-                <QRCode                                     value="755190101463160911600002706190518300510B115885YS3..CFTUB" 
-                  bgColor="#FFFF"
-                  fgColor="#000"
-                  size="200"
-                  includeMargin="true"
-                  className="qr__small"
-                  //{passData.barcode.message}
-                /> 
-              </div>
+              
+              <Link className="link-qr__detail" to = "/qr-detail">    
+                <div className="qr__small-wrapper">
+                  <QRCode                                     value="755190101463160911600002706190518300510B115885YS3..CFTUB" 
+                    bgColor="#FFFF"
+                    fgColor="#000"
+                    size="200"
+                    includeMargin="true"
+                    className="qr__small"
+                    //{passData.barcode.message}
+                  /> 
+                </div>
+              </Link>
             </div>
           </div>
 
