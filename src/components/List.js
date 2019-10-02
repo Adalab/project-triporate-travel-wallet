@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './List.scss';
 
 
@@ -25,7 +25,7 @@ class List extends React.Component {
           {Array.map((item, index) =>{
             return(
               <li key={index} className="list__card">
-                <Link className="card__link" to={`/detail/${item}`}>
+                <Link className="card__link" to={`/detail/${index}`}>
                   <div className="card__info-wrapper">
                     <div className="card__logo-wrapper">
                       <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" alt="Organization logo" className="card__logo-img"/>

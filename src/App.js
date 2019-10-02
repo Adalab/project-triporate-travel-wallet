@@ -191,8 +191,12 @@ handleFilePicker() {
           <Route exact path = "/" render = {routerProps => (<List 
           getInputFile = {this.getInputFile}
           handleFilePicker = {this.handleFilePicker}
+          routerProps = {routerProps}
           />)}/>
-          <Route  path = "/detail" component = {Detail}></Route>
+          <Route  path = "/detail/:id" render = {routerProps => (<Detail 
+
+          routerProps = {routerProps}
+          />)}></Route>
         </Switch>
       </div>
     );
