@@ -18,8 +18,7 @@ class Detail extends React.Component {
 
     const boardingPass = boardingList.find(item => item.serialNumber === getId);
 
- 
-      if (boardingPass) {
+    if (boardingPass) {
         if (boardingPass.organizationName === 'Iberia') {
           return (
             <React.Fragment>
