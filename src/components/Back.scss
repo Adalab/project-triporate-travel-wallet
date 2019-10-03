@@ -1,0 +1,50 @@
+.back__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 95vh;
+  border-radius: 25px;
+  background-color: #8B2973;
+  background-size: 100% 41%;
+  position: relative;
+}
+
+.back__info-wrapper {
+  height: 90%;
+}
+
+.back__link-go-back {
+  color:white;
+  font-weight: 700;
+  margin:10px;
+}
+
+.back__card {
+  padding: 10px; 
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.171);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  // margin-top:5%;
+  border-radius: 25px;
+  height: 100%;
+}
+
+.back_logo {
+  max-width: 70px;
+}
+
+.back__user-name {
+  margin:4%;
+  :first-child {
+    color:#707070;
+    font-size: 16px;
+    padding:5px 0;
+  }
+}
+.back__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
