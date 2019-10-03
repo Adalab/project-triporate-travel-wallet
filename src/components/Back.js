@@ -16,7 +16,7 @@ class Back extends React.Component {
         return(
           <div className="back__wrapper">
             <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
-              <span className="go-back-icon">&lt;</span>
+            <i className="fas fa-angle-left"></i>
             </Link>  
     
             <div className="back__info-wrapper">     

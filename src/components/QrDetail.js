@@ -15,9 +15,9 @@ class QrDetail extends React.Component {
 
     return (
       <div className="qr__detail-color-wrapper">
-        <div className="qr__link-go-back-wrapper">
+        <div className="qr__link-go-back-wrapper2">
           <Link className="qr__link-go-back-wrapper" to={`/detail/${routerProps.match.params.id}`}>
-            <span className="go-back-icon">&lt;</span>
+          <i className="fas fa-angle-left"></i>
           </Link>
         </div>
         <div className="qr__small-wrapper">

@@ -1,5 +1,5 @@
-LOGO SEED LAB
-<!-- <img src="ruta en nuestro proyecto" alt="Seed Lab logo" height="200px"> -->
+
+<img src="./src/assets/images/logo_long.png" alt="Seed Lab logo" height="200px">
 
 ## Travel Wallet | Seed Lab ##
 

@@ -26,7 +26,7 @@ class Detail extends React.Component {
               className="detail"
               style={{ backgroundImage: `linear-gradient(to right bottom, #D7192D, #D7192D)` }}
             >
-              <Link className="link-go-back" to="/"> <span className="go-back-icon">&lt;</span></Link>
+              <Link className="link-go-back" to="/"> <i className="fas fa-angle-left"></i></Link>
               <div className="detail__card">
                 <div className="detail__card__header">
                   <img src={`data:image/png;base64,${boardingPass.logo}`} alt="Organization logo" className="detail_logo" />
@@ -96,14 +96,12 @@ class Detail extends React.Component {
                 </div>
                 <Link to={`/back/${getId}`}>
                   <div className="detail__btn-wrapper">
-                    <p className="detail__btn-label">More info</p>
                     <button
                       className="detail__btn-more"
                       type="button"
                       name="add_img"
-                    // onClick={this.handleFilePicker}
                     >
-                      +
+                      <i className="fas fa-info"></i>
                 </button>
                   </div>
                 </Link>
@@ -192,13 +190,13 @@ class Detail extends React.Component {
                 </div>
                 <Link to="/">
                   <div className="detail__btn-wrapper">
-                    <p className="detail__btn-label">More info</p>
                     <button
                       className="detail__btn-more"
                       type="button"
                       name="add_img"
                     // onClick={this.handleFilePicker}
-                    >+
+                    >
+                      <i class="fas fa-info"></i>
                     </button>
                   </div>
                 </Link>

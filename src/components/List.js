@@ -129,13 +129,13 @@ class List extends React.Component {
           }
         </ul>
         <div className="list__btn-wrapper">
-          <p className="list__btn-label">Add ticket</p>
           <button
             className="list__btn"
             type="button"
             name="add_img"
             onClick={this.handleFilePicker}
-          >+
+          >
+            <i className="fas fa-plus"></i>
           </button>
         </div>
         <input
