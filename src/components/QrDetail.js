@@ -6,7 +6,13 @@ import PropTypes from 'prop-types';
 
 class QrDetail extends React.Component {
   render() {
-    const { routerProps } = this.props;
+    const { boardingList, routerProps } = this.props;
+    console.log(routerProps);
+    const getId = routerProps.match.params.id;
+
+    const boardingPass = boardingList.find(item => item.serialNumber === getId);
+    console.log(boardingPass);
+
     return (
       <div className="qr__detail-color-wrapper">
         <div className="qr__link-go-back-wrapper">
@@ -16,7 +22,7 @@ class QrDetail extends React.Component {
         </div>
         <div className="qr__small-wrapper">
           <QRCode
-            value="755190101463160911600002706190518300510B115885YS3..CFTUB"
+            value={boardingPass.qrCode}
             bgColor="#FFFF"
             fgColor="#000"
             size={200}
@@ -31,7 +37,8 @@ class QrDetail extends React.Component {
 }
 
 QrDetail.propTypes = {
-  routerProps: PropTypes.objectOf(PropTypes.object).isRequired
+  routerProps: PropTypes.objectOf(PropTypes.object).isRequired,
+  boardingList: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default QrDetail;
