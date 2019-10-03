@@ -7,10 +7,7 @@ class Back extends React.Component {
 
   render() {
     const {boardingList, routerProps} = this.props;
-<<<<<<< HEAD
   
-=======
->>>>>>> dev
     const getId = routerProps.match.params.id;
     const boardingPass = boardingList.find(item => item.serialNumber === getId);
 
