@@ -6,48 +6,64 @@ import PropTypes from 'prop-types';
 class Back extends React.Component {
 
   render() {
-    const {routerProps} = this.props;
-    return(   
-      <div className="back__wrapper">
-        <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
-          <span className="go-back-icon">&lt;</span>
-        </Link>  
+    const {boardingList, routerProps} = this.props;
+    console.log(boardingList);
+    const getId = routerProps.match.params.id;
+    const boardingPass = boardingList.find(item => item.serialNumber === getId);
 
-        <div className="back__info-wrapper">     
-        <div className="back__card">
-              <div className="back__card__header">
-                <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" 
-                alt="Organization logo" 
-                className="back_logo"/>
+    if (boardingPass) {
+      if (boardingPass.organizationName === 'Iberia') {
+        return(
+          <div className="back__wrapper">
+            <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
+              <span className="go-back-icon">&lt;</span>
+            </Link>  
+    
+            <div className="back__info-wrapper">     
+            <div className="back__card">
+                  <div className="back__card__header">
+                    <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" 
+                    alt="Organization logo" 
+                    className="back_logo"/>
+                </div>
+                  <div className="back__user-name">
+                    <p className="user__flyer-title">FREQUENT FLYER</p>
+                    <p className="user__flyer-content">{boardingPass.frequentFlyer}</p>
+                  </div>
+                  <div className="back__user-name">
+                    <p className="user__ticket-title">TICKET NUMBER</p>
+                    <p className="user__ticket-content">{boardingPass.ticketNumber}</p>
+                  </div>
+                  <div className="back__user-name">
+                    <p className="user__operator-title">OPERATOR</p>
+                    <p className="user__operator-content">{boardingPass.operator}</p>
+                  </div>
+                  <div className="back__user-name">
+                    <p className="user__code-title">BOOKING CODE</p>
+                    <p className="user__code-content">{boardingPass.bookingCode}</p>
+                  </div>
+                  <div className="back__user-name">
+                    <p className="user__terminal-title">TERMINAL</p>
+                    <p className="user__terminal-content">{boardingPass.terminal}</p>
+                  </div>
+                  <div className="back__user-name">
+                      <p className="user__gatehour-title">OTHERS</p>
+                      <p className="user__gatehour-content"></p>
+                  </div>
+                  </div>
             </div>
-              <div className="back__user-name">
-                <p className="user__flyer-title">FREQUENT FLYER</p>
-                <p className="user__flyer-content">IH66667777</p>
-              </div>
-              <div className="back__user-name">
-                <p className="user__ticket-title">TICKET NUMBER</p>
-                <p className="user__ticket-content">739827938249384</p>
-              </div>
-              <div className="back__user-name">
-                <p className="user__operator-title">OPERATOR</p>
-                <p className="user__operator-content">IBERIA LÍNEAS AÉREAS</p>
-              </div>
-              <div className="back__user-name">
-                <p className="user__code-title">BOOKING CODE</p>
-                <p className="user__code-content">XXXXXXHS</p>
-              </div>
-              <div className="back__user-name">
-                <p className="user__terminal-title">TERMINAL</p>
-                <p className="user__terminal-content">T2</p>
-              </div>
-              <div className="back__user-name">
-                  <p className="user__gatehour-title">GATE CLOSE</p>
-                  <p className="user__gatehour-content">13:50</p>
-              </div>
-              </div>
-        </div>
-      </div>
-  );
+          </div>
+      )
+      }
+      else{};
+    }
+    // const frequentFlyer = passData.boardingPass.backFields[1].value;
+    // const ticketNumber = passData.boardingPass.backFields[2].value;
+    // const operator = passData.boardingPass.backFields[9].value;
+    // const bookingCode = passData.boardingPass.backFields[11].value;
+    // const terminal = passData.boardingPass.backFields[3].value;
+    // const gateClose = passData.boardingPass.backFields[8].value;
+    ;
   }
 }
 

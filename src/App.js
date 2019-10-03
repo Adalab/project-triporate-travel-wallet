@@ -303,7 +303,7 @@ class App extends React.Component {
         (<QrDetail routerProps = {routerProps}/>)
         }/>
 
-        <Route exact path="/back/:id" render={routerProps => <Back routerProps={routerProps}/>}/>
+        <Route exact path="/back/:id" render={routerProps => <Back routerProps={routerProps} boardingList = {this.state.boardingList}/>}/>
       </div>
     );
   }
