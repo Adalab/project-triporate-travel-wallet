@@ -40,7 +40,7 @@ class Detail extends React.Component {
                     <p className="detail__time">{boardingPass.departureTime}</p>
                   </div>
                   <div className="detail__travel-icon">️
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Airplane_silhouette.svg/400px-Airplane_silhouette.svg.png" alt="Transport icon" className="detail__icon-img" />
+                  <i className="fas fa-plane"></i>
                   </div>
                   <div className="detail__data-wrapper">
                     <p className="detail__city">{boardingPass.destination}</p>
@@ -130,7 +130,116 @@ class Detail extends React.Component {
         );
       }
       else if (boardingPass.organizationName === 'Renfe') {
-        return <div>Holis</div>
+        return (
+          <React.Fragment>
+            <div className="detail__list">
+              <List
+                boardingList={boardingList}
+              />
+            </div>
+            <div className="detail">
+              <Link className="link-go-back" to="/"> <span className="go-back-icon">&lt;</span></Link>
+              <div className="detail__card">
+                <div className="detail__card__header-renfe">
+                  <img src={`data:image/png;base64,${boardingPass.logo}`} alt="Organization logo" className="detail_logo" />
+                  <div className="card__flight">
+                    {boardingPass.departureDate}
+                  </div>
+                </div>
+                <div className="detail__places-renfe">
+                  <div className="detail__data-wrapper-renfe">
+                    <p className="detail__city-renfe">{boardingPass.originName}</p>
+                    <p className="detail__time-renfe">{boardingPass.departureTime}</p>
+                  </div>
+                  <div className="detail__travel-icon-renfe">️
+                  <i className="fas fa-train"></i>
+                  </div>
+                  <div className="detail__data-wrapper-renfe">
+                    <p className="detail__city-renfe">{boardingPass.destinationName}</p>
+                    <p className="detail__time-renfe">{boardingPass.arrivalTime}</p>
+                  </div>
+                </div>
+
+                <div className="detail__travel-info">
+                  <ul className="detail__info-list">
+                    <li className="detail__info-element">
+                      <p className="element__info-content">{boardingPass.train}</p>
+                      <p className="element__info-title">Train</p>
+                    </li>
+                    <li className="detail__info-element">
+                      <p className="element__info-content">{boardingPass.car}</p>
+                      <p className="element__info-title">Car</p>
+                    </li>
+                    <li className="detail__info-element">
+                      <p className="element__info-content">{boardingPass.seat}</p>
+                      <p className="element__info-title">Seat</p>
+                    </li>
+                    <li className="detail__info-element">
+                      <p className="element__info-content">{boardingPass.trainClass}</p>
+                      <p className="element__info-title">Class</p>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="detail__user-name">
+                  <p className="user__name-title">NAME</p>
+                  <p className="user__name-content">{boardingPass.passengerName}</p>
+                </div>
+                <div className="detail__qr-wrapper">
+                  <div className="boarding__info">
+                    <p className="user__boarding-title">DEPARTURE TIME</p>
+                    <p className="user__boarding-content">{boardingPass.departureTime}</p>
+                  </div>
+
+                  <Link className="link-qr__detail" to={`/qrDetail/${getId}`}>
+                    <div className="qr__small-wrapper">
+                      <QRCode value="755190101463160911600002706190518300510B115885YS3..CFTUB"
+                        bgColor="#FFFF"
+                        fgColor="#000"
+                        size={70}
+                        includeMargin={true}
+                        className="qr__small"
+                      //{passData.barcode.message}
+                      />
+                    </div>
+                  </Link>
+                </div>
+              </div>
+
+            </div>
+            <Link to="/">
+              <div className="detail__btn-wrapper">
+                <p className="detail__btn-label">More info</p>
+                <button
+                  className="detail__btn-more"
+                  type="button"
+                  name="add_img"
+                // onClick={this.handleFilePicker}
+                >+
+                    </button>
+              </div>
+            </Link>
+
+
+
+          <Link to={`/back/${getId}`}>
+            <div className="detail__btn-wrapper">
+              <p className="detail__btn-label">More info</p>
+              <button
+                className="detail__btn-more"
+                type="button"
+                name="add_img"
+              // onClick={this.handleFilePicker}
+              >
+                +
+                </button>
+            </div>
+          </Link>
+          
+    
+          </React.Fragment >
+
+        );
       }
     } else {
       return console.log('que te peines');

@@ -6,7 +6,6 @@ import QRCode from 'qrcode.react';
 class QrDetail extends React.Component {
   render() {
     const { routerProps } = this.props;
-    console.log('hola soy el qr grande')
     return (
       <div className="qr__detail-color-wrapper">
         <div className="qr__link-go-back-wrapper">
