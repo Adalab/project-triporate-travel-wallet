@@ -25,7 +25,10 @@ class Detail extends React.Component {
                 boardingList={boardingList}
               />
             </div>
-            <div className="detail">
+            <div 
+              className="detail"
+              style={{ backgroundImage: `linear-gradient(to right bottom, #D7192D, #D7192D)`}}
+            >
               <Link className="link-go-back" to="/"> <span className="go-back-icon">&lt;</span></Link>
               <div className="detail__card">
                 <div className="detail__card__header">
@@ -50,7 +53,10 @@ class Detail extends React.Component {
 
                 <div className="detail__travel-info">
                   <ul className="detail__info-list">
-                    <li className="detail__info-element">
+                    <li 
+                    className="detail__info-element"
+                    style={{ backgroundColor: `${boardingPass.backColor}` }}
+                    >
                       <p className="element__info-content">{boardingPass.flight}</p>
                       <p className="element__info-title">Flight</p>
                     </li>
