@@ -79,7 +79,7 @@ class Detail extends React.Component {
                     <p className="user__boarding-content">{boardingPass.boardingTime}</p>
                   </div>
 
-                  <Link className="link-qr__detail" to="/qr-detail">
+                  <Link className="link-qr__detail" to={`/qrDetail/${getId}`}>
                     <div className="qr__small-wrapper">
                       <QRCode value="755190101463160911600002706190518300510B115885YS3..CFTUB"
                         bgColor="#FFFF"
@@ -124,7 +124,7 @@ class Detail extends React.Component {
             </div>
           </Link>
           
-    );
+    
           </React.Fragment >
 
         );

@@ -2,3 +2,23 @@
   color:white;
   font-weight: 700;
 }
+.qr__detail-color-wrapper {
+ display: flex;
+ flex-direction: column;
+ height: 95vh;
+ border-radius: 25px;
+ background-color:#8B2973;
+ justify-content: center;
+ align-items: center;
+}
+.qr__link-go-bak-wrapper {
+ position: relative;
+ height: 20%;
+}
+.qr__link-go-back{
+ position: absolute;
+}
+.detail-qr__small {
+ box-shadow: 10px 6px 10px 0 rgba(0, 0, 0, 0.424);
+ margin-right: 0px;
+}
