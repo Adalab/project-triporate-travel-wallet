@@ -28,7 +28,6 @@ class QrDetail extends React.Component {
             size={200}
             includeMargin={true}
             className="detail-qr__small"
-          //{passData.barcode.message}
           />
         </div>
       </div>

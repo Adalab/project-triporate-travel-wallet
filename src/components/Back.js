@@ -7,14 +7,16 @@ class Back extends React.Component {
 
   render() {
     const {boardingList, routerProps} = this.props;
-    console.log(boardingList);
     const getId = routerProps.match.params.id;
     const boardingPass = boardingList.find(item => item.serialNumber === getId);
 
     if (boardingPass) {
       if (boardingPass.organizationName === 'Iberia') {
         return(
-          <div className="back__wrapper">
+          <div 
+            className="back__wrapper"
+            style={{ backgroundColor: `#D7192D` }}
+            >
             <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
               <span className="go-back-icon">&lt;</span>
             </Link>  
@@ -22,7 +24,7 @@ class Back extends React.Component {
             <div className="back__info-wrapper">     
             <div className="back__card">
                   <div className="back__card__header">
-                    <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" 
+                    <img src={`data:image/png;base64,${boardingPass.logo}`} 
                     alt="Organization logo" 
                     className="back_logo"/>
                 </div>
@@ -58,7 +60,9 @@ class Back extends React.Component {
 
       else if(boardingPass.organizationName === 'Renfe') {
         return(
-          <div className="back__wrapper">
+          <div className="back__wrapper"
+              style={{ backgroundColor: `${boardingPass.backColor}` }}
+            >
             <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
               <span className="go-back-icon">&lt;</span>
             </Link>  
@@ -66,7 +70,7 @@ class Back extends React.Component {
             <div className="back__info-wrapper">     
             <div className="back__card">
               <div className="back__card__header">
-                <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" 
+                <img src={`data:image/png;base64,${boardingPass.logo}`} 
                 alt="Organization logo" 
                 className="back_logo"/>
               </div>

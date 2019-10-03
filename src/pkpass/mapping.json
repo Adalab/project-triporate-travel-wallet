@@ -1,0 +1,22 @@
+{
+  'mappings':[
+    {  "passTypeIdentifier": "pass.com.iberia.MobileBoardingPassType", 
+      paxName:
+          {
+            location:"headerFields", 
+            tagName:'PassengerName'
+          }
+    }, {  "passTypeIdentifier": "pass.com.ryanair.MobileBoardingPassType", 
+      paxName:
+          {
+            location:"headerFields", 
+            tagName:'PassengerNameRyan'
+          }
+    }
+  ]
+}
+
+
+jsonObj['headerFields']['PassengerNameRyan']
+
+jsonObj[mapping.paxName.location][mapping.paxName.tagName]

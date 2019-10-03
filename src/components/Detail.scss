@@ -20,6 +20,20 @@
   position: relative;
 }
 
+.detail-renfe {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 95vh;
+  border-radius: 25px;
+  background-color: white;
+  background-image: linear-gradient(to right bottom, #CC0099, #CC0099);
+  background-size: 100% 41%;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 .link-go-back {
   color:white;
   font-weight: 700;
