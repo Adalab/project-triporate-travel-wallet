@@ -2,7 +2,7 @@
   border-radius: 25px;
   list-style: none;
   background-color: #EFEFEF;
-  @media (max-width: 500px){
+  @media (max-width: 768px){
     display: none;
     max-width:450px;
     background-color: #EFEFEF;
@@ -22,6 +22,7 @@
   background-repeat: no-repeat;
   position: relative;
   max-width: 340px;
+  flex-grow: 1; 
 }
 
 .link-go-back {

@@ -197,10 +197,7 @@ class Detail extends React.Component {
                     </div>
                   </Link>
                 </div>
-              </div>
-
-            </div>
-            <Link to="/">
+                <Link to="/">
               <div className="detail__btn-wrapper">
                 <p className="detail__btn-label">More info</p>
                 <button
@@ -211,25 +208,11 @@ class Detail extends React.Component {
                 >+
                     </button>
               </div>
-            </Link>
+            </Link> 
+              </div>
 
-
-
-          <Link to={`/back/${getId}`}>
-            <div className="detail__btn-wrapper">
-              <p className="detail__btn-label">More info</p>
-              <button
-                className="detail__btn-more"
-                type="button"
-                name="add_img"
-              // onClick={this.handleFilePicker}
-              >
-                +
-                </button>
             </div>
-          </Link>
-          
-    
+   
           </React.Fragment >
 
         );
