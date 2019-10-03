@@ -7,8 +7,6 @@
 
 This is a pkpass viewer that allows the users to have their own Wallet of boarding passes, and details of each. We tried to solve the issue of watching an Apple native file using any web platform, desktop, tablet, Android and Iphone.
 
-MOCKUPS DE DEVICES?
-
 ### The team ###
 
 This is developed by [Eva Marco](https://github.com/EvaMarco), [Andreina Romero](https://github.com/andreina-proyectos), [Beatriz Pascual](https://github.com/pascualbeatriz), [Constanza Sosa](https://github.com/constanza-sosa) and [Alexandra Jara](https://github.com/alexandrajaramz). The development of this initial stage of the web app was proposed by Triporate.
