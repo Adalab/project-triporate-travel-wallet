@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './Back.scss';
+import PropTypes from 'prop-types';
 
 const Back = ({routerProps}) => {
     return(   
@@ -14,6 +15,10 @@ const Back = ({routerProps}) => {
         </div>
       </div>
   );
+}
+
+Back.propTypes = {
+  routerProps: PropTypes.objectOf(PropTypes.object).isRequired
 }
 
 export default Back;

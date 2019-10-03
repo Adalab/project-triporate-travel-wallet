@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './List.scss';
+import PropTypes from 'prop-types';
 
 
 class List extends React.Component {
@@ -16,7 +17,7 @@ class List extends React.Component {
   }
 
   render() {
-    const {getInputFile, boardingList, routerProps} = this.props;
+    const {getInputFile, boardingList} = this.props;
     return (
       <div className="list">
         <h1 className="list__title">MY TRAVEL WALLET.</h1>
@@ -107,6 +108,11 @@ class List extends React.Component {
       </div>
     );
   }
+}
+
+List.propTypes = {
+  getInputFile: PropTypes.func.isRequired, 
+  boardingList: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default List;
