@@ -15,7 +15,7 @@ class Back extends React.Component {
 
         <div className="back__info-wrapper">     
         <div className="back__card">
-              <div className="detail__card__header">
+              <div className="back__card__header">
                 <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" 
                 alt="Organization logo" 
                 className="back_logo"/>

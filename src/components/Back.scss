@@ -20,6 +20,7 @@
 }
 
 .back__card {
+  padding: 10px; 
   box-shadow: 0 6px 10px 0 rgba(0,0,0,0.171);
   display: flex;
   flex-direction: column;
@@ -32,14 +33,18 @@
 
 .back_logo {
   max-width: 70px;
-  margin:5px;
 }
 
 .back__user-name {
-  margin:20px;
+  margin:4%;
   :first-child {
     color:#707070;
     font-size: 16px;
     padding:5px 0;
   }
+}
+.back__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
