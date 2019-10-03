@@ -1,10 +1,13 @@
-Logo seed lab
+LOGO SEED LAB
+<!-- <img src="ruta en nuestro proyecto" alt="Seed Lab logo" height="200px"> -->
 
 ## Travel Wallet | Seed Lab ##
 
 ### The project ###
 
 This is a pkpass viewer that allows the users to have their own Wallet of boarding passes, and details of each. We tried to solve the issue of watching an Apple native file using any web platform, desktop, tablet, Android and Iphone.
+
+MOCKUPS DE DEVICES?
 
 ### The team ###
 
@@ -15,8 +18,12 @@ This is developed by @EvaMarco, @andreina-proyectos, @pascualbeatriz, @constanza
 We used React (components and some libraries) and Sass, following a mobile first approach.
 
 ##### Components #####
-- Index -> App -> List / Detail
-- Detail -> QrDetail / Back 
+- Index 
+  - App 
+    - List 
+    - Detail
+      - QrDetail 
+      - Back 
 
 ##### Libraries #####
 - Node-sass
