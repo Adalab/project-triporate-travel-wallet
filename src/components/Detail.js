@@ -226,8 +226,6 @@ class Detail extends React.Component {
               </div>
             </Link>
 
-
-
           <Link to={`/back/${getId}`}>
             <div className="detail__btn-wrapper">
               <p className="detail__btn-label">More info</p>
@@ -248,7 +246,6 @@ class Detail extends React.Component {
         );
       }
     } else {
-      return console.log('que te peines');
     }
 
 
