@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 
 
 class Detail extends React.Component {
-
   render() {
     const { boardingList, routerProps } = this.props;
     const getId = routerProps.match.params.id;
@@ -23,9 +22,9 @@ class Detail extends React.Component {
                 boardingList={boardingList}
               />
             </div>
-            <div 
+            <div
               className="detail"
-              style={{ backgroundImage: `linear-gradient(to right bottom, #D7192D, #D7192D)`}}
+              style={{ backgroundImage: `linear-gradient(to right bottom, #D7192D, #D7192D)` }}
             >
               <Link className="link-go-back" to="/"> <span className="go-back-icon">&lt;</span></Link>
               <div className="detail__card">
@@ -51,9 +50,9 @@ class Detail extends React.Component {
 
                 <div className="detail__travel-info">
                   <ul className="detail__info-list">
-                    <li 
-                    className="detail__info-element"
-                    style={{ backgroundColor: `${boardingPass.backColor}` }}
+                    <li
+                      className="detail__info-element"
+                      style={{ backgroundColor: `${boardingPass.backColor}` }}
                     >
                       <p className="element__info-content">{boardingPass.flight}</p>
                       <p className="element__info-title">Flight</p>
@@ -95,39 +94,24 @@ class Detail extends React.Component {
                     </div>
                   </Link>
                 </div>
-              </div>
-
-            </div>
-            <Link to="/">
-              <div className="detail__btn-wrapper">
-                <p className="detail__btn-label">More info</p>
-                <button
-                  className="detail__btn-more"
-                  type="button"
-                  name="add_img"
-                // onClick={this.handleFilePicker}
-                >+
-                    </button>
-              </div>
-            </Link>
-
-
-
-          <Link to={`/back/${getId}`}>
-            <div className="detail__btn-wrapper">
-              <p className="detail__btn-label">More info</p>
-              <button
-                className="detail__btn-more"
-                type="button"
-                name="add_img"
-              // onClick={this.handleFilePicker}
-              >
-                +
+                <Link to={`/back/${getId}`}>
+                  <div className="detail__btn-wrapper">
+                    <p className="detail__btn-label">More info</p>
+                    <button
+                      className="detail__btn-more"
+                      type="button"
+                      name="add_img"
+                    // onClick={this.handleFilePicker}
+                    >
+                      +
                 </button>
+                  </div>
+                </Link>
+              </div>
             </div>
-          </Link>
-          
-    
+
+
+
           </React.Fragment >
 
         );
@@ -152,17 +136,17 @@ class Detail extends React.Component {
                 <div className="detail__places-renfe">
                   <div className="detail__data-wrapper-renfe">
                     <p className="detail__city-renfe">{boardingPass.originName}</p>
-                    <p className="detail__time-renfe">{boardingPass.departureTime}</p>
+
                   </div>
                   <div className="detail__travel-icon-renfe">️
-                  <i className="fas fa-train"></i>
+                    <p className="detail__time-renfe">{boardingPass.departureTime}</p>
+                    <i className="fas fa-train"></i>
+                    <p className="detail__time-renfe">{boardingPass.arrivalTime}</p>
                   </div>
                   <div className="detail__data-wrapper-renfe">
                     <p className="detail__city-renfe">{boardingPass.destinationName}</p>
-                    <p className="detail__time-renfe">{boardingPass.arrivalTime}</p>
                   </div>
                 </div>
-
                 <div className="detail__travel-info">
                   <ul className="detail__info-list">
                     <li className="detail__info-element">
@@ -188,7 +172,7 @@ class Detail extends React.Component {
                   <p className="user__name-title">NAME</p>
                   <p className="user__name-content">{boardingPass.passengerName}</p>
                 </div>
-                <div className="detail__qr-wrapper">
+                <div className="detail__qr-wrapper-renfe">
                   <div className="boarding__info">
                     <p className="user__boarding-title">DEPARTURE TIME</p>
                     <p className="user__boarding-content">{boardingPass.departureTime}</p>
@@ -206,37 +190,22 @@ class Detail extends React.Component {
                     </div>
                   </Link>
                 </div>
-              </div>
-
-            </div>
-            <Link to="/">
-              <div className="detail__btn-wrapper">
-                <p className="detail__btn-label">More info</p>
-                <button
-                  className="detail__btn-more"
-                  type="button"
-                  name="add_img"
-                // onClick={this.handleFilePicker}
-                >+
+                <Link to="/">
+                  <div className="detail__btn-wrapper">
+                    <p className="detail__btn-label">More info</p>
+                    <button
+                      className="detail__btn-more"
+                      type="button"
+                      name="add_img"
+                    // onClick={this.handleFilePicker}
+                    >+
                     </button>
+                  </div>
+                </Link>
               </div>
-            </Link>
 
-          <Link to={`/back/${getId}`}>
-            <div className="detail__btn-wrapper">
-              <p className="detail__btn-label">More info</p>
-              <button
-                className="detail__btn-more"
-                type="button"
-                name="add_img"
-              // onClick={this.handleFilePicker}
-              >
-                +
-                </button>
             </div>
-          </Link>
-          
-    
+
           </React.Fragment >
 
         );
