@@ -55,6 +55,57 @@ class Back extends React.Component {
           </div>
       )
       }
+
+      else if(boardingPass.organizationName === 'Renfe') {
+        return(
+          <div className="back__wrapper">
+            <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
+              <span className="go-back-icon">&lt;</span>
+            </Link>  
+    
+            <div className="back__info-wrapper">     
+            <div className="back__card">
+              <div className="back__card__header">
+                <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" 
+                alt="Organization logo" 
+                className="back_logo"/>
+              </div>
+
+
+        {/* const organizationName = passData.organizationName;
+    
+        const cercania = passData.boardingPass.backFields[7].label; */}
+
+              <div className="back__user-name">
+                <p className="user__flyer-title">SERIAL NUMBER</p>
+                <p className="user__flyer-content">{boardingPass.serialNumber}</p>
+              </div>
+              <div className="back__user-name">
+                <p className="user__ticket-title">TICKET NUMBER</p>
+                <p className="user__ticket-content">{boardingPass.ticketNumber}</p>
+              </div>
+              <div className="back__user-name">
+                <p className="user__operator-title">ARRIVAL TIME</p>
+                <p className="user__operator-content">{boardingPass.arrivalTime}</p>
+              </div>
+              <div className="back__user-name">
+                <p className="user__code-title">BOOKING CODE</p>
+                <p className="user__code-content">{boardingPass.bookingCode}</p>
+              </div>
+              <div className="back__user-name">
+                <p className="user__terminal-title">FEE</p>
+                <p className="user__terminal-content">{boardingPass.fee}</p>
+              </div>
+              <div className="back__user-name">
+                  <p className="user__gatehour-title">PRICE</p>
+                  <p className="user__gatehour-content">{boardingPass.price}</p>
+              </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
+
       else{};
     }
   }
