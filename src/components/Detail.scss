@@ -47,6 +47,12 @@
   align-items: center;
   justify-content: space-between;
 }
+.detail__card__header-renfe {
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .card__flight {
   max-width: 100px;
@@ -64,25 +70,46 @@
   justify-content: center;
   text-align: center;
 }
+.detail__places-renfe {
+  display: flex;
+  flex-direction: column; 
+}
 
 .detail__data-wrapper {
   padding:20px 25px;
 }
-
+.detail__data-wrapper-renfe {
+  padding:0 25px;
+}
 .detail__city {
   padding: 5% 20px;
   font-size: 25px;
 }
-
+.detail__city-renfe {
+  padding-bottom: 2%; 
+  font-size: 25px;
+  text-align: center; 
+  max-width: 250px;
+}
 .detail__time {
   font-size: 18px;
   color:#707070;
 }
-
+.detail__time-renfe {
+  font-size: 18px;
+  color:#707070;
+  text-align: center; 
+}
 .detail__travel-icon {
-  display: flex;
+  display: flex; 
 }
 
+.detail__travel-icon-renfe {
+  display: flex;
+  justify-content: center; 
+  text-align: center; 
+  margin: 3%; 
+}
 .detail__icon-img {
   width:30px;
   justify-content: center;
