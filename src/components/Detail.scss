@@ -56,13 +56,14 @@
 }
 
 .detail__card__header {
-  padding: 0 10px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .detail__card__header-renfe {
-  padding: 10px 10px;
+  padding: 15px ;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,7 +116,8 @@
   text-align: center; 
 }
 .detail__travel-icon {
-  display: flex; 
+  display: flex;
+  align-items: center;
 }
 
 .detail__travel-icon-renfe {
