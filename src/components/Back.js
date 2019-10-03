@@ -7,7 +7,7 @@ class Back extends React.Component {
 
   render() {
     const {boardingList, routerProps} = this.props;
-    console.log(boardingList);
+  
     const getId = routerProps.match.params.id;
     const boardingPass = boardingList.find(item => item.serialNumber === getId);
 
@@ -106,8 +106,15 @@ class Back extends React.Component {
         )
       }
 
-      else{};
     }
+      else{
+        return(
+          <div>
+            <p className="warning__messagge">Este billete no existe, prueba a cargar otro</p>
+            <Link to="/" className="link-go-back-error"> Volver </Link>
+          </div>
+        )
+      };
   }
 }
 
