@@ -300,7 +300,7 @@ class App extends React.Component {
           render={routerProps => <Detail routerProps={routerProps} boardingList = {this.state.boardingList}/>}></Route>
 
         <Route exact path = "/qrDetail/:id" render = {routerProps => 
-        (<QrDetail routerProps = {routerProps}/>)
+        (<QrDetail routerProps = {routerProps} boardingList = {this.state.boardingList}/>)
         }/>
 
         <Route exact path="/back/:id" render={routerProps => <Back routerProps={routerProps}/>}/>
