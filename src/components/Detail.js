@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import List from './List';
 import './Detail.scss';
 import QRCode from 'qrcode.react';
+import PropTypes from 'prop-types';
+
 
 class Detail extends React.Component {
   // constructor(props) {
@@ -138,6 +140,11 @@ class Detail extends React.Component {
 
 
   }
+}
+
+Detail.propTypes = {
+  boardingList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  routerProps: PropTypes.objectOf(PropTypes.object).isRequired
 }
 
 export default Detail;

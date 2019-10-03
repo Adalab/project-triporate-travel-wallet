@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './QrDetail.scss';
 import QRCode from 'qrcode.react';
+import PropTypes from 'prop-types';
 
 class QrDetail extends React.Component {
   render() {
@@ -28,6 +29,10 @@ class QrDetail extends React.Component {
       </div>
     );
   }
+}
+
+QrDetail.propTypes = {
+  routerProps: PropTypes.objectOf(PropTypes.object).isRequired
 }
 
 export default QrDetail;
