@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.scss';
-import {Switch, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import List from './components/List';
 import Detail from './components/Detail';
+import QrDetail from './components/QrDetail';
+import Back from './components/Back';
 import JSZip from 'jszip';
 
 class App extends React.Component {
@@ -17,7 +19,6 @@ class App extends React.Component {
   componentDidMount(){
     const obj = (JSON.parse(localStorage.getItem('boardingList')))
     if(obj!== null){
-
       this.setState({boardingList:obj})
     }
   }
@@ -91,57 +92,56 @@ class App extends React.Component {
         }else {
           const organizationName = passData.organizationName;
           const serialNumber = passData.serialNumber;
-        const qrCode = passData.barcode.message;
-        const backColor = passData.backgroundColor;
-        const foreColor = passData.foregroundColor;
-        const labelColor = passData.labelColor;
-        const origin = passData.boardingPass.primaryFields[0].value;
-        const originName = passData.boardingPass.primaryFields[0].label;
-        const destination = passData.boardingPass.primaryFields[1].value;
-        const destinationName = passData.boardingPass.primaryFields[1].label;
-        const departureDate = passData.boardingPass.headerFields[0].value;
-        const departureTime = passData.boardingPass.backFields[3].value;
-        const boardingTime = passData.boardingPass.auxiliaryFields[2].value;
-        const arrivalTime = passData.boardingPass.backFields[5].value;
-        const flight = passData.boardingPass.backFields[6].value;
-        const flyingClass = passData.boardingPass.backFields[11].value;
-        const seat = passData.boardingPass.secondaryFields[1].value;
-        const passengerName = passData.boardingPass.backFields[0].value;
-        const ticketNumber = passData.boardingPass.backFields[1].value;
-        const operator = passData.boardingPass.backFields[8].value;
-        const bookingCode = passData.boardingPass.backFields[10].value;
-        const terminal = passData.boardingPass.backFields[2].value;
-        const gateClose = passData.boardingPass.backFields[7].value;
+          const qrCode = passData.barcode.message;
+          const backColor = passData.backgroundColor;
+          const foreColor = passData.foregroundColor;
+          const labelColor = passData.labelColor;
+          const origin = passData.boardingPass.primaryFields[0].value;
+          const originName = passData.boardingPass.primaryFields[0].label;
+          const destination = passData.boardingPass.primaryFields[1].value;
+          const destinationName = passData.boardingPass.primaryFields[1].label;
+          const departureDate = passData.boardingPass.headerFields[0].value;
+          const departureTime = passData.boardingPass.backFields[3].value;
+          const boardingTime = passData.boardingPass.auxiliaryFields[2].value;
+          const arrivalTime = passData.boardingPass.backFields[5].value;
+          const flight = passData.boardingPass.backFields[6].value;
+          const flyingClass = passData.boardingPass.backFields[11].value;
+          const seat = passData.boardingPass.secondaryFields[1].value;
+          const passengerName = passData.boardingPass.backFields[0].value;
+          const ticketNumber = passData.boardingPass.backFields[1].value;
+          const operator = passData.boardingPass.backFields[8].value;
+          const bookingCode = passData.boardingPass.backFields[10].value;
+          const terminal = passData.boardingPass.backFields[2].value;
+          const gateClose = passData.boardingPass.backFields[7].value;
 
-        boardingCard = {
-          'organizationName': organizationName,
-          'serialNumber': serialNumber,
-          'qrCode': qrCode,
-          'backColor': backColor,
-          'foreColor': foreColor,
-          'labelColor': labelColor,
-          'origin': origin,
-          'originName': originName,
-          'destination': destination,
-          'destinationName': destinationName ,
-          'departureDate': departureDate,
-          'departureTime': departureTime,
-          'arrivalTime': arrivalTime,
-          'flight': flight,
-          'flyingClass': flyingClass,
-          'seat': seat,
-          'passengerName': passengerName,
-          'frequentFlyer': '',
-          'operator': operator, 
-          'ticketNumber': ticketNumber,
-          'bookingCode': bookingCode, 
-          'terminal': terminal, 
-          'gateClose': gateClose,
-          'boardingTime':boardingTime
-        }
-        return boardingCard;
-        }
-        
+          boardingCard = {
+            'organizationName': organizationName,
+            'serialNumber': serialNumber,
+            'qrCode': qrCode,
+            'backColor': backColor,
+            'foreColor': foreColor,
+            'labelColor': labelColor,
+            'origin': origin,
+            'originName': originName,
+            'destination': destination,
+            'destinationName': destinationName ,
+            'departureDate': departureDate,
+            'departureTime': departureTime,
+            'arrivalTime': arrivalTime,
+            'flight': flight,
+            'flyingClass': flyingClass,
+            'seat': seat,
+            'passengerName': passengerName,
+            'frequentFlyer': '',
+            'operator': operator, 
+            'ticketNumber': ticketNumber,
+            'bookingCode': bookingCode, 
+            'terminal': terminal, 
+            'gateClose': gateClose,
+            'boardingTime':boardingTime
+          }
+          return boardingCard;
+        }       
       }
       else if(passData.organizationName === "Renfe"){
         const organizationName = passData.organizationName;
@@ -162,12 +162,10 @@ class App extends React.Component {
         const seat = passData.boardingPass.auxiliaryFields[2].value;
         const trainClass = passData.boardingPass.auxiliaryFields[3].value;
         const passengerName = passData.boardingPass.secondaryFields[0].value;
-
         const fee = passData.boardingPass.backFields[4].value;
         const price = passData.boardingPass.backFields[5].value;
         const cercania = passData.boardingPass.backFields[7].label;
         // const conditions = passData.boardingPass.backFields[10].value;
-
 
         boardingCard = {
           'organizationName': organizationName,
@@ -289,16 +287,23 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Switch>
-          <Route exact path = "/" render = {routerProps => (<List 
+        <Route exact path = "/" render = {routerProps => (
+        <List 
           getInputFile = {this.getInputFile}
-          boardingList = {this.state.boardingList}
-          />)}/>
-          <Route  path = "/detail/:id" render = {routerProps => (<Detail 
+          handleFilePicker = {this.handleFilePicker}
           routerProps = {routerProps}
           boardingList = {this.state.boardingList}
-          />)}/>
-        </Switch>
+        />)}/>
+
+        <Route 
+          exact path="/detail/:id" 
+          render={routerProps => <Detail routerProps={routerProps} boardingList = {this.state.boardingList}/>}></Route>
+
+        <Route exact path = "/qrDetail/:id" render = {routerProps => 
+        (<QrDetail routerProps = {routerProps}/>)
+        }/>
+
+        <Route exact path="/back/:id" render={routerProps => <Back routerProps={routerProps}/>}/>
       </div>
     );
   }
