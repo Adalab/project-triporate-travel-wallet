@@ -11,7 +11,7 @@ MOCKUPS DE DEVICES?
 
 ### The team ###
 
-This is developed by @EvaMarco, @andreina-proyectos, @pascualbeatriz, @constanza-sosa and @alexandrajaramz. The development of this initial stage of the web app was proposed by Triporate.
+This is developed by [Eva Marco](https://github.com/EvaMarco), [Andreina Romero](https://github.com/andreina-proyectos), [Beatriz Pascual](https://github.com/pascualbeatriz), [Constanza Sosa](https://github.com/constanza-sosa) and [Alexandra Jara](https://github.com/alexandrajaramz). The development of this initial stage of the web app was proposed by Triporate.
 
 ### Technologies ###
 
