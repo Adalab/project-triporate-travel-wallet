@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './Back.scss';
 
-const QrDetail = ({routerProps}) => {
+const Back = ({routerProps}) => {
     return(   
       <div className="qr__detail-wrapper">
         <h1>soy el back</h1>
@@ -16,4 +16,4 @@ const QrDetail = ({routerProps}) => {
   );
 }
 
-export default QrDetail;
+export default Back;
