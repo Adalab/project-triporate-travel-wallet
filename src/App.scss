@@ -11,4 +11,15 @@
   width: 100vw;
   height: 100vh;
   padding: 15px;
+  background-color: #EFEFEF;
+  border: 15px solid white; 
+  border-radius: 40px;
+  display: flex;
+  align-items: center; 
+  @media (min-width: 500px){
+    justify-content: space-between;
+    background-color: #EFEFEF;
+
+  }
+
 }

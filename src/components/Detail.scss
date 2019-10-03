@@ -1,8 +1,11 @@
 .detail__list{
-  background-color: red; 
+  border-radius: 25px;
   list-style: none;
-  @media (max-width: 768px){
+  background-color: #EFEFEF;
+  @media (max-width: 500px){
     display: none;
+    max-width:450px;
+    background-color: #EFEFEF;
   }
 }
 
@@ -18,6 +21,7 @@
   background-position-y: top;
   background-repeat: no-repeat;
   position: relative;
+  max-width: 340px;
 }
 
 .link-go-back {
@@ -102,8 +106,8 @@
 }
 .detail__travel-icon {
   display: flex; 
+  align-items: center; 
 }
-
 .detail__travel-icon-renfe {
   display: flex;
   justify-content: center; 
@@ -182,11 +186,9 @@ font-size: 12px;
 }
 
 .detail__btn-wrapper  {
-  position: absolute;
-  right: 5%;
-  bottom: 5%;
   display: flex;
   justify-content: flex-end;
+  padding: 15px; 
 }
 
 .detail__btn-label {
