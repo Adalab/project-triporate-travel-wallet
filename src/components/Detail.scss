@@ -25,6 +25,20 @@
   flex-grow: 1; 
 }
 
+.detail-renfe {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 95vh;
+  border-radius: 25px;
+  background-color: white;
+  background-image: linear-gradient(to right bottom, #CC0099, #CC0099);
+  background-size: 100% 41%;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 .link-go-back {
   color:white;
   font-weight: 700;
@@ -47,13 +61,14 @@
 }
 
 .detail__card__header {
-  padding: 0 10px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .detail__card__header-renfe {
-  padding: 10px 10px;
+  padding: 15px ;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -106,8 +121,8 @@
   margin: 0 auto; 
 }
 .detail__travel-icon {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
 }
 .detail__travel-icon-renfe {
   display: flex;

@@ -120,7 +120,7 @@ class Detail extends React.Component {
                 boardingList={boardingList}
               />
             </div>
-            <div className="detail">
+            <div className="detail-renfe">
               <Link className="link-go-back" to="/"> <span className="go-back-icon">&lt;</span></Link>
               <div className="detail__card">
                 <div className="detail__card__header-renfe">

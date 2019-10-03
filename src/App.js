@@ -263,7 +263,7 @@ class App extends React.Component {
             case 'icon.png':
               json['icon'] = await handleForegroundImage(zip, zipEntry);
               break;
-            case 'icon@x2.png.png':
+            case 'icon@x2.png':
               json['iconRetina'] = await handleForegroundImage(zip, zipEntry);  break;
             default:
               break;
