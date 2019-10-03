@@ -34,25 +34,11 @@ class Detail extends React.Component {
                 {boardingPass.departureDate}
                 </div>
               </div>
-<<<<<<< HEAD
-              
-              <Link className="link-qr__detail" to = "/qr-detail">    
-                <div className="qr__small-wrapper">
-                  <QRCode                                     value="755190101463160911600002706190518300510B115885YS3..CFTUB" 
-                    bgColor="#FFFF"
-                    fgColor="#000"
-                    size={200}
-                    includeMargin={true}
-                    className="qr__small"
-                    //{passData.barcode.message}
-                  /> 
-=======
     
               <div className="detail__places">
                 <div className="detail__data-wrapper">
                   <p className="detail__city">{boardingPass.origin}</p>
                   <p className="detail__time">{boardingPass.departureTime}</p>
->>>>>>> e932585f08e0259e328f0e01e4cfb0c08c749511
                 </div>
                 <div className="detail__travel-icon">️
                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Airplane_silhouette.svg/400px-Airplane_silhouette.svg.png" alt="Transport icon" className="detail__icon-img"/>
