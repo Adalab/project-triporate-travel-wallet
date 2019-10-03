@@ -84,13 +84,12 @@ class Detail extends React.Component {
 
                   <Link className="link-qr__detail" to={`/qrDetail/${getId}`}>
                     <div className="qr__small-wrapper">
-                      <QRCode value="755190101463160911600002706190518300510B115885YS3..CFTUB"
+                      <QRCode value={boardingPass.qrCode}
                         bgColor="#FFFF"
                         fgColor="#000"
                         size={70}
                         includeMargin={true}
                         className="qr__small"
-                      //{passData.barcode.message}
                       />
                     </div>
                   </Link>
@@ -181,13 +180,12 @@ class Detail extends React.Component {
 
                   <Link className="link-qr__detail" to={`/qrDetail/${getId}`}>
                     <div className="qr__small-wrapper">
-                      <QRCode value="755190101463160911600002706190518300510B115885YS3..CFTUB"
+                      <QRCode value={boardingPass.qrCode}
                         bgColor="#FFFF"
                         fgColor="#000"
                         size={70}
                         includeMargin={true}
                         className="qr__small"
-                      //{passData.barcode.message}
                       />
                     </div>
                   </Link>
@@ -213,7 +211,6 @@ class Detail extends React.Component {
         );
       }
     } else {
-      return console.log('que te peines');
     }
 
 

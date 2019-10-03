@@ -6,48 +6,108 @@ import PropTypes from 'prop-types';
 class Back extends React.Component {
 
   render() {
-    const {routerProps} = this.props;
-    return(   
-      <div className="back__wrapper">
-        <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
-          <span className="go-back-icon">&lt;</span>
-        </Link>  
+    const {boardingList, routerProps} = this.props;
+    console.log(boardingList);
+    const getId = routerProps.match.params.id;
+    const boardingPass = boardingList.find(item => item.serialNumber === getId);
 
-        <div className="back__info-wrapper">     
-        <div className="back__card">
+    if (boardingPass) {
+      if (boardingPass.organizationName === 'Iberia') {
+        return(
+          <div className="back__wrapper">
+            <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
+              <span className="go-back-icon">&lt;</span>
+            </Link>  
+    
+            <div className="back__info-wrapper">     
+            <div className="back__card">
+                  <div className="back__card__header">
+                    <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" 
+                    alt="Organization logo" 
+                    className="back_logo"/>
+                </div>
+                  <div className="back__user-name">
+                    <p className="user__flyer-title">FREQUENT FLYER</p>
+                    <p className="user__flyer-content">{boardingPass.frequentFlyer}</p>
+                  </div>
+                  <div className="back__user-name">
+                    <p className="user__ticket-title">TICKET NUMBER</p>
+                    <p className="user__ticket-content">{boardingPass.ticketNumber}</p>
+                  </div>
+                  <div className="back__user-name">
+                    <p className="user__operator-title">OPERATOR</p>
+                    <p className="user__operator-content">{boardingPass.operator}</p>
+                  </div>
+                  <div className="back__user-name">
+                    <p className="user__code-title">BOOKING CODE</p>
+                    <p className="user__code-content">{boardingPass.bookingCode}</p>
+                  </div>
+                  <div className="back__user-name">
+                    <p className="user__terminal-title">TERMINAL</p>
+                    <p className="user__terminal-content">{boardingPass.terminal}</p>
+                  </div>
+                  <div className="back__user-name">
+                      <p className="user__gatehour-title">OTHERS</p>
+                      <p className="user__gatehour-content"></p>
+                  </div>
+                  </div>
+            </div>
+          </div>
+      )
+      }
+
+      else if(boardingPass.organizationName === 'Renfe') {
+        return(
+          <div className="back__wrapper">
+            <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
+              <span className="go-back-icon">&lt;</span>
+            </Link>  
+    
+            <div className="back__info-wrapper">     
+            <div className="back__card">
               <div className="back__card__header">
                 <img src="http://marcaporhombro.com/wp-content/uploads/2012/09/renfe.jpg" 
                 alt="Organization logo" 
                 className="back_logo"/>
-            </div>
+              </div>
+
+
+        {/* const organizationName = passData.organizationName;
+    
+        const cercania = passData.boardingPass.backFields[7].label; */}
+
               <div className="back__user-name">
-                <p className="user__flyer-title">FREQUENT FLYER</p>
-                <p className="user__flyer-content">IH66667777</p>
+                <p className="user__flyer-title">SERIAL NUMBER</p>
+                <p className="user__flyer-content">{boardingPass.serialNumber}</p>
               </div>
               <div className="back__user-name">
                 <p className="user__ticket-title">TICKET NUMBER</p>
-                <p className="user__ticket-content">739827938249384</p>
+                <p className="user__ticket-content">{boardingPass.ticketNumber}</p>
               </div>
               <div className="back__user-name">
-                <p className="user__operator-title">OPERATOR</p>
-                <p className="user__operator-content">IBERIA LÍNEAS AÉREAS</p>
+                <p className="user__operator-title">ARRIVAL TIME</p>
+                <p className="user__operator-content">{boardingPass.arrivalTime}</p>
               </div>
               <div className="back__user-name">
                 <p className="user__code-title">BOOKING CODE</p>
-                <p className="user__code-content">XXXXXXHS</p>
+                <p className="user__code-content">{boardingPass.bookingCode}</p>
               </div>
               <div className="back__user-name">
-                <p className="user__terminal-title">TERMINAL</p>
-                <p className="user__terminal-content">T2</p>
+                <p className="user__terminal-title">FEE</p>
+                <p className="user__terminal-content">{boardingPass.fee}</p>
               </div>
               <div className="back__user-name">
-                  <p className="user__gatehour-title">GATE CLOSE</p>
-                  <p className="user__gatehour-content">13:50</p>
+                  <p className="user__gatehour-title">PRICE</p>
+                  <p className="user__gatehour-content">{boardingPass.price}</p>
               </div>
               </div>
-        </div>
-      </div>
-  );
+            </div>
+          </div>
+        )
+      }
+
+      else{};
+    }
   }
 }
 
