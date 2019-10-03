@@ -26,24 +26,45 @@ class List extends React.Component {
             .map((item, index) => {
               if (item.organizationName === "Iberia") {
                 return (
-                  <li key={item.serialNumber} className="list__card">
+                  <li key={item.serialNumber} 
+                  className="list__card"
+                  style={{ backgroundColor: `${item.backColor}` }}
+                  >
                     <Link className="card__link" to={`/detail/${item.serialNumber}`}>
                       <div className="card__info-wrapper">
                         <div className="card__logo-wrapper">
                           <img src={`data:image/png;base64,${item.logo}`} alt="Organization logo" className="card__logo-img" />
-                          <p className="card__date">{item.departureDate}</p>
+                          <p 
+                          className="card__date"
+                          style={{ color: `${item.labelColor}` }}
+                          >{item.departureDate}</p>
                         </div>
                         <div className="card__travel-wrapper">
                           <div className="travel__data-wrapper">
-                            <p className="travel__city">{item.origin}</p>
-                            <p className="travel__time">{item.departureTime}</p>
+                            <p 
+                              className="travel__city"
+                              style={{ color: `${item.labelColor}` }}
+                            >{item.origin}</p>
+                            <p 
+                              className="travel__time"
+                              style={{ color: `${item.labelColor}` }}
+                            >{item.departureTime}</p>
                           </div>
                           <div className="travel__icon">️
-                            <i className="fas fa-plane"></i>
+                            <i 
+                              className="fas fa-plane"
+                              style={{ color: `${item.labelColor}` }}
+                            ></i>
                           </div>
                           <div className="travel__data-wrapper">
-                            <p className="travel__city">{item.destination}</p>
-                            <p className="travel__time">{item.arrivalTime}</p>
+                            <p 
+                              className="travel__city"
+                              style={{ color: `${item.labelColor}` }}
+                            >{item.destination}</p>
+                            <p 
+                              className="travel__time"
+                              style={{ color: `${item.labelColor}` }}
+                            >{item.arrivalTime}</p>
                           </div>
                         </div>
                       </div>
@@ -53,24 +74,45 @@ class List extends React.Component {
               }
               else if (item.organizationName === "Renfe") {
                 return (
-                  <li key={item.serialNumber} className="list__card">
+                  <li key={item.serialNumber} 
+                  className="list__card"
+                  style={{ backgroundColor: `${item.backColor}` }}
+                  >
                     <Link className="card__link" to={`/detail/${item.serialNumber}`}>
                       <div className="card__info-wrapper">
                         <div className="card__logo-wrapper">
                           <img src={`data:image/png;base64,${item.logo}`} alt="Organization logo" className="card__logo-img" />
-                          <p className="card__date">{item.departureDate}</p>
+                          <p 
+                          className="card__date"
+                          style={{ color: `${item.labelColor}` }}
+                          >{item.departureDate}</p>
                         </div>
                         <div className="card__travel-wrapper">
                           <div className="travel__data-wrapper">
-                            <p className="travel__city">{item.originName.substring(0, 3)}</p>
-                            <p className="travel__time">{item.departureTime}</p>
+                            <p 
+                            className="travel__city"
+                            style={{ color: `${item.labelColor}` }}
+                            >{item.originName.substring(0, 3)}</p>
+                            <p 
+                            className="travel__time"
+                            style={{ color: `${item.labelColor}` }}
+                            >{item.departureTime}</p>
                           </div>
                           <div className="travel__icon">️
-                          <i className="fas fa-train"></i>
+                          <i 
+                            className="fas fa-train"
+                            style={{ color: `${item.labelColor}` }}
+                          ></i>
                           </div>
                           <div className="travel__data-wrapper">
-                            <p className="travel__city">{item.destinationName.substring(0, 3)}</p>
-                            <p className="travel__time">{item.arrivalTime}</p>
+                            <p 
+                            className="travel__city"
+                            style={{ color: `${item.labelColor}` }}
+                            >{item.destinationName.substring(0, 3)}</p>
+                            <p 
+                              className="travel__time"
+                              style={{ color: `${item.labelColor}` }}
+                            >{item.arrivalTime}</p>
                           </div>
                         </div>
                       </div>
