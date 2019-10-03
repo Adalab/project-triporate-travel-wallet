@@ -57,13 +57,6 @@ class Back extends React.Component {
       }
       else{};
     }
-    // const frequentFlyer = passData.boardingPass.backFields[1].value;
-    // const ticketNumber = passData.boardingPass.backFields[2].value;
-    // const operator = passData.boardingPass.backFields[9].value;
-    // const bookingCode = passData.boardingPass.backFields[11].value;
-    // const terminal = passData.boardingPass.backFields[3].value;
-    // const gateClose = passData.boardingPass.backFields[8].value;
-    ;
   }
 }
 
