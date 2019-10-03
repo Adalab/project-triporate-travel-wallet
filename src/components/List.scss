@@ -4,6 +4,10 @@
   border-radius: 25px;
   background-color: #EFEFEF;
   position: relative;
+  @media (min-width: 500px){
+    max-width:460px;
+    padding: 20px; 
+  }
 }
 
 .list__title {
