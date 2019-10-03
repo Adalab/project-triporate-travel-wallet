@@ -263,7 +263,7 @@ class App extends React.Component {
             case 'icon.png':
               json['icon'] = await handleForegroundImage(zip, zipEntry);
               break;
-            case 'icon@x2.png.png':
+            case 'icon@x2.png':
               json['iconRetina'] = await handleForegroundImage(zip, zipEntry);  break;
             default:
               break;
@@ -278,7 +278,6 @@ class App extends React.Component {
   }
 
   getInputFile(event){
-    console.log(event.target.files);
     const files = event.target.files;
     for (let i = 0; i < files.length; i++) {
         this.handleFile(files[i]);

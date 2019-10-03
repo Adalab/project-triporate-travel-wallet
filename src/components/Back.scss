@@ -7,10 +7,14 @@
   background-color: #8B2973;
   background-size: 100% 41%;
   position: relative;
+  @media(min-width:500px){
+    width: 400px;
+  }
 }
 
 .back__info-wrapper {
   height: 90%;
+  
 }
 
 .back__link-go-back {
