@@ -165,7 +165,6 @@ class App extends React.Component {
         const fee = passData.boardingPass.backFields[4].value;
         const price = passData.boardingPass.backFields[5].value;
         const cercania = passData.boardingPass.backFields[7].label;
-        // const conditions = passData.boardingPass.backFields[10].value;
 
         boardingCard = {
           'organizationName': organizationName,
@@ -189,7 +188,6 @@ class App extends React.Component {
           'fee' : fee, 
           'price' : price, 
           'cercania' : cercania, 
-          // 'conditions' : conditions
         }
         return boardingCard;
       }
@@ -204,11 +202,7 @@ class App extends React.Component {
         const destination = passData.boardingPass.primaryFields[1].value;
         const destinationName = passData.boardingPass.primaryFields[1].label;
         const departureDate = passData.relevantDate;
-        //se puee pasar a Iberia si se convierte el formato. Nos vale para Fecha & Hora. 
-        const departureTime = passData.boardingPass.backFields[4].value;
-        
-        //We need to make conditionals for other companies as they have the field in different places.  
-        // const arrivalTime = passData.boardingPass.backFields[6].value;
+        const departureTime = passData.boardingPass.backFields[4].value;;
         const flight = passData.boardingPass.backFields[7].value;
         const flyingClass = passData.boardingPass.backFields[12].value;
         const seat = passData.boardingPass.secondaryFields[1].value;
@@ -226,7 +220,6 @@ class App extends React.Component {
           'destinationName': destinationName ,
           'departureDate': departureDate,
           'departureTime': departureTime,
-          // 'arrivalTime': arrivalTime,
           'flight': flight,
           'flyingClass': flyingClass,
           'seat': seat,

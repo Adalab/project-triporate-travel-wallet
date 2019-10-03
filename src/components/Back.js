@@ -75,12 +75,6 @@ class Back extends React.Component {
                 alt="Organization logo" 
                 className="back_logo"/>
               </div>
-
-
-        {/* const organizationName = passData.organizationName;
-    
-        const cercania = passData.boardingPass.backFields[7].label; */}
-
               <div className="back__user-name">
                 <p className="user__flyer-title">SERIAL NUMBER</p>
                 <p className="user__flyer-content">{boardingPass.serialNumber}</p>

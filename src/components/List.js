@@ -153,7 +153,7 @@ class List extends React.Component {
 }
 
 List.propTypes = {
-  getInputFile: PropTypes.func.isRequired, 
+  getInputFile: PropTypes.func, 
   boardingList: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 

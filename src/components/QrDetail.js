@@ -7,11 +7,9 @@ import PropTypes from 'prop-types';
 class QrDetail extends React.Component {
   render() {
     const { boardingList, routerProps } = this.props;
-    console.log(routerProps);
     const getId = routerProps.match.params.id;
 
     const boardingPass = boardingList.find(item => item.serialNumber === getId);
-    console.log(boardingPass);
 
     return (
       <div className="qr__detail-color-wrapper">
