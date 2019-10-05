@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 class QrDetail extends React.Component {
   render() {
-    const { boardingList, routerProps } = this.props;
+    const { boardingList, routerProps, getInputFile } = this.props;
     const getId = routerProps.match.params.id;
 
     const boardingPass = boardingList.find(item => item.serialNumber === getId);
@@ -17,6 +17,7 @@ class QrDetail extends React.Component {
         <div className="detail__list">
           <List
             boardingList={boardingList}
+            getInputFile = {getInputFile}
           />
         </div>
         <div className="qr__detail-color-wrapper">
@@ -42,6 +43,7 @@ class QrDetail extends React.Component {
 }
 
 QrDetail.propTypes = {
+  getInputFile: PropTypes.func.isRequired, 
   routerProps: PropTypes.objectOf(PropTypes.object).isRequired,
   boardingList: PropTypes.arrayOf(PropTypes.object).isRequired
 }

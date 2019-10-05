@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 class Detail extends React.Component {
   render() {
-    const { boardingList, routerProps } = this.props;
+    const { boardingList, routerProps , getInputFile} = this.props;
     const getId = routerProps.match.params.id;
 
     const boardingPass = boardingList.find(item => item.serialNumber === getId);
@@ -20,6 +20,7 @@ class Detail extends React.Component {
               <div className="detail__list">
                 <List
                   boardingList={boardingList}
+                  getInputFile = {getInputFile}
                 />
               </div>
               <div 
@@ -115,6 +116,7 @@ class Detail extends React.Component {
             <div className="detail__list">
               <List
                 boardingList={boardingList}
+                getInputFile = {getInputFile}
               />
             </div>
             <div className="detail-renfe">
@@ -213,6 +215,7 @@ class Detail extends React.Component {
 }
 }
 Detail.propTypes = {
+  getInputFile: PropTypes.func.isRequired, 
   boardingList: PropTypes.arrayOf(PropTypes.object).isRequired,
   routerProps: PropTypes.objectOf(PropTypes.object).isRequired
 }
