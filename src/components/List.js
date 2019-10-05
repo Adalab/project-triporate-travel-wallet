@@ -20,7 +20,7 @@ class List extends React.Component {
     const {getInputFile, boardingList} = this.props;
     return (
       <div className="list">
-        <h1 className="list__title">MY TRAVEL WALLET.</h1>
+        <h1 className="list__title">MY TRAVEL WALLET</h1>
         <ul className="list__cards">
           {boardingList
             .map((item, index) => {
@@ -153,7 +153,7 @@ class List extends React.Component {
 }
 
 List.propTypes = {
-  getInputFile: PropTypes.func, 
+  getInputFile: PropTypes.func.isRequired, 
   boardingList: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 

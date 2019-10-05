@@ -282,20 +282,21 @@ class App extends React.Component {
         <Route exact path = "/" render = {routerProps => (
         <List 
           getInputFile = {this.getInputFile}
-          handleFilePicker = {this.handleFilePicker}
           routerProps = {routerProps}
           boardingList = {this.state.boardingList}
         />)}/>
 
         <Route 
           exact path="/detail/:id" 
-          render={routerProps => <Detail routerProps={routerProps} boardingList = {this.state.boardingList}/>}></Route>
+          render={routerProps => 
+          <Detail 
+          routerProps={routerProps} boardingList = {this.state.boardingList} getInputFile = {this.getInputFile}/>}></Route>
 
         <Route exact path = "/qrDetail/:id" render = {routerProps => 
-        (<QrDetail routerProps = {routerProps} boardingList = {this.state.boardingList}/>)
+        (<QrDetail routerProps = {routerProps} boardingList = {this.state.boardingList} getInputFile = {this.getInputFile}/>)
         }/>
 
-        <Route exact path="/back/:id" render={routerProps => <Back routerProps={routerProps} boardingList = {this.state.boardingList}/>}/>
+        <Route exact path="/back/:id" render={routerProps => <Back routerProps={routerProps} boardingList = {this.state.boardingList} getInputFile = {this.getInputFile}/>}/>
       </div>
     );
   }
