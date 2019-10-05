@@ -5,13 +5,16 @@
 .qr__detail-color-wrapper {
  display: flex;
  flex-direction: column;
- height: 95vh;
+ height: 80vh;
  border-radius: 25px;
- background-color:#EFEFEF;
+ background-color: white;
  justify-content: center;
  align-items: center;
  position: relative;
  width: 100%; 
+ @media(min-width:500px){
+  width:340px;
+}
 }
 .qr__link-go-back-wrapper2{
   position: absolute;
@@ -20,7 +23,10 @@
   height: 20%;
 }
 
-.detail-qr__small {
- box-shadow: 10px 6px 10px 0 rgba(0, 0, 0, 0.424);
- margin-right: 0px;
+.fa-angle-left{
+  color: white;
+}
+
+.qr-back{
+  color: black;
 }

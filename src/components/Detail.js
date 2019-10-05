@@ -118,7 +118,7 @@ class Detail extends React.Component {
               />
             </div>
             <div className="detail-renfe">
-              <Link className="link-go-back" to="/"> <span className="go-back-icon">&lt;</span></Link>
+              <Link className="link-go-back" to="/"> <i className="fas fa-angle-left"/></Link>
               <div className="detail__card">
                 <div className="detail__card__header-renfe">
                   <img src={`data:image/png;base64,${boardingPass.logo}`} alt="Organization logo" className="detail_logo" />

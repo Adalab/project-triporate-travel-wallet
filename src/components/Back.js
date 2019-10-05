@@ -79,9 +79,8 @@ class Back extends React.Component {
               style={{ backgroundColor: `${boardingPass.backColor}` }}
             >
             <Link className="back__link-go-back" to = {`/detail/${routerProps.match.params.id}`}>
-              <span className="go-back-icon">&lt;</span>
+              <i className="fas fa-angle-left"></i>
             </Link>  
-    
             <div className="back__info-wrapper">     
             <div className="back__card">
               <div className="back__card__header">
