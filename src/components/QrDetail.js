@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './QrDetail.scss';
-import QRCode from 'qrcode.react';
-import List from './List';
-import PropTypes from 'prop-types';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./QrDetail.scss";
+import QRCode from "qrcode.react";
+import List from "./List";
+import PropTypes from "prop-types";
 
 class QrDetail extends React.Component {
   render() {
@@ -15,15 +15,15 @@ class QrDetail extends React.Component {
     return (
       <React.Fragment>
         <div className="detail__list">
-          <List
-            boardingList={boardingList}
-            getInputFile = {getInputFile}
-          />
+          <List boardingList={boardingList} getInputFile={getInputFile} />
         </div>
         <div className="qr__detail-color-wrapper">
           <div className="qr__link-go-back-wrapper2">
-            <Link className="qr__link-go-back-wrapper" to={`/detail/${routerProps.match.params.id}`}>
-            <i className="fas fa-angle-left qr-back"></i>
+            <Link
+              className="qr__link-go-back-wrapper"
+              to={`/detail/${routerProps.match.params.id}`}
+            >
+              <i className="fas fa-angle-left qr-back"></i>
             </Link>
           </div>
           <div className="qr__small-wrapper">
@@ -43,9 +43,9 @@ class QrDetail extends React.Component {
 }
 
 QrDetail.propTypes = {
-  getInputFile: PropTypes.func.isRequired, 
+  getInputFile: PropTypes.func.isRequired,
   routerProps: PropTypes.objectOf(PropTypes.object).isRequired,
   boardingList: PropTypes.arrayOf(PropTypes.object).isRequired
-}
+};
 
 export default QrDetail;
